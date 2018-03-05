@@ -269,16 +269,16 @@ addressref={aff3,aff7},
 \begin{abstract} % abstract
 
 {\bf Background} Penalized regression approaches are standard tools in quantitative genetics.  
-It is known that the fit of an \emph{ordinary least squares} regression is independent of certain transformations of the coding of the predictor variables, and that the standard mixed model \emph{ridge regression best linear unbiased prediction} (RRBLUP) is neither affected by translations of the variable coding, nor by global scaling. 
+It is known that the fit of an \emph{ordinary least squares} (OLS) regression is independent of certain transformations of the coding of the predictor variables, and that the standard mixed model \emph{ridge regression best linear unbiased prediction} (RRBLUP) is neither affected by translations of the variable coding, nor by global scaling. 
 However, it has been reported that an extended version of this mixed model, which incorporates interactions by products of markers as additional predictor variables, indeed is affected by translations of the marker coding. 
 
 
-{\bf Results} In this work, we identify the cause of this loss of invariance in a general context of mixed models defined on polynomials in the predictor variables. We illustrate here that translating the coding of the predictor variables has in general an impact on penalized regressions, with the exception of the case in which only the size of the coefficients of monomials of highest degree are penalized. The invariance of RRBLUP 
-can thus be considered as a special case of this situation in which we are dealing with a regression model of a polynomial of degree 1, where the size of the fixed effect (degree 0) is not penalized but all coefficients of monomials of degree 1 are.
+{\bf Results} In this work, we identify the cause of this loss of invariance in a general context of mixed models defined on polynomials in the predictor variables. We Show  that, in general, translating the coding of the predictor variables has  an impact on penalized regressions, with the exception of the case in which only the size of the coefficients of monomials of highest degree are penalized. The invariance of RRBLUP 
+can thus be considered as a special case of this setting, in which we are dealing with a regression model of a polynomial of degree 1, where the size of the fixed effect (degree 0) is not penalized but all coefficients of monomials of degree 1 are.
 The extended RRBLUP which includes interactions is not invariant to translations, since it does not only penalize the interaction (degree 2), but also the additive effects (degree 1). Finally, we investigate the impact of changes of the coding on estimated effect sizes in a pair epistasis model on a publicly available wheat data set.
 
 {\bf Conclusion}
- Our results give a general insight into the behavior of penalized regressions. The fact that coding changes the estimates of interaction effects provides an additional reason to interpret the biological meaning of these interactions with caution. Moreover, this problematic does not only apply to gene by gene interactions, but also for other types of interactions modeled in mixed models with Hadamard products of covariance matrices, for instance gene by environment interactions.
+ Our results give a general insight into the behaviour of penalized regressions. The fact that coding translations alters the estimates of interaction effects provides an additional reason to interpret the biological meaning of these interactions with caution. Moreover, this problem does not only apply to gene by gene interactions, but also for other types of interactions modelled in mixed models with Hadamard products of covariance matrices, for instance gene by environment interactions.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -338,26 +338,26 @@ The extended RRBLUP which includes interactions is not invariant to translations
 \section*{Background}
 \emph{Genomic prediction}, that is the prediction of properties of individuals from their genetic data, is a crucial ingredient of modern breeding programs.
 The traditional quantitative genetics theory is built upon linear models in which allele effects are usually modeled additively.
-In more detail,
-the common model for the effect of the genotype on the phenotype is 
+In particular,
+the usual model to represent the effect of the genotype on the phenotype is given by
 \begin{equation} \label{eq:01}
 	\mathbf{y}=\mathbf{1}_n \mu + \M \bm{\beta} + \bm{\epsilon},
 \end{equation} 
 where $\mathbf{y}$ is the $n \times 1$ vector of the phenotypic observations of $n$ individuals and $\mathbf{1}_n$ an $n \times 1$ vector with each entry equal to $1$.  Moreover,
 $\mu$ is the $y$-intercept, and $\M$  the  $n \times p$ matrix describing the marker states of $n$ individuals at $p$ loci. Dealing with single nucleotide polymorphisms (SNPs) and a diploid species, the entries $M_{i,j}$ can for instance be coded as $0$ $(\mathbf{aa})$, $1$ $(\mathbf{aA}$ or $\mathbf{Aa})$ or $2$ $(\mathbf{AA})$ counting the occurrence of the reference allele $\mathbf{A}$. The $p \times 1$ vector $\bm{\beta}$ represents the allele substitution effects of the $p$ loci, and $\bm{\epsilon}$ the $n \times 1$ error vector. For single marker regression, which may for instance be used in \emph{genome wide association studies} (GWAS), we can apply ordinary least square regression to determine $\beta$. 
-However, in approaches of genomic prediction, we model the effects of many different loci simultaneously and the number of markers $p$ is usually much larger than the number of observations $n$. To reduce overfitting and to deal with the large number of predictor variables, different methods have been applied in the last decades, among which \emph{ridge regression best linear unbiased prediction} (RRBLUP) is the most popular. RRBLUP penalizes the squared $\ell_2$ norm of $\bm{\beta}$ and is built on the additional model specifications of $\mu$ being a fixed unknown parameter, $\bm{\beta}\sim \mathcal{N}(\bm{0},\sigma_\beta^2 \mathbf{I})$ and $\bm{\epsilon}\sim \mathcal{N}(\bm{0},\sigma_\epsilon^2 \mathbf{I})$ with $\mathbf{I}$ the identity matrix.
-With an approach of maximizing a certain density, these assumptions allow to derive the optimal penalty factor as the ratio of the variance components $\lambda:= \frac{\sigma_\epsilon^2}{\sigma_\beta^2}$ (Even though the theory to derive the optimal penalty is based on the assumption of $\sigma_\beta^2$ and $\sigma_\epsilon^2$ being known, these parameters are in practice often estimated from the same data set). Note here that the fixed effect $\mu$ is not penalized in RRBLUP, which means that this method is not a pure ridge regression but actually a mixed model in which the size of $\mu$ is not penalized but the entries of $\bm{\beta}$ are.  
-This mixed model RRBLUP is also called \emph{genomic best linear unbiased prediction} (GBLUP) when the model is reformulated with $\mathbf{g}:=\M \bm{\beta}$ (and thus $\mathbf{g}\sim \mathcal{N}(0,\sigma_\beta^2 \M' \M)$). \\
+However, in approaches of genomic prediction, we model the effects of many different loci simultaneously and the number of markers $p$ is usually much larger than the number of observations $n$. To reduce overfitting and to deal with a large number of predictor variables, different methods have been applied in the last decades, among which \emph{ridge regression best linear unbiased prediction} (RRBLUP) is the most popular. RRBLUP penalizes the squared $\ell_2$ norm of $\bm{\beta}$ and is built on the additional model specifications of $\mu$ being a fixed unknown parameter, $\bm{\beta}\sim \mathcal{N}(\bm{0},\sigma_\beta^2 \mathbf{I})$ and $\bm{\epsilon}\sim \mathcal{N}(\bm{0},\sigma_\epsilon^2 \mathbf{I})$ with $\mathbf{I}$ the identity matrix.
+With an approach of maximizing a certain density, these assumptions allow to derive the optimal penalty factor as the ratio of the variance components $\lambda:= \frac{\sigma_\epsilon^2}{\sigma_\beta^2}$, which in practice is estimated from the data, albeit the theory to derive the optimal penalty is based on the assumption of $\sigma_\beta^2$ and $\sigma_\epsilon^2$ are known. Note here that the fixed effect $\mu$ is not penalized in RRBLUP, which means that this method is not a pure ridge regression but actually a mixed model in which the size of $\mu$ is not penalized but the entries of $\bm{\beta}$ are.  
+This mixed model RRBLUP is also called \emph{genomic best linear unbiased prediction} (GBLUP) when the model is reformulated with $\mathbf{g}:=\M \bm{\beta}$, and thus $\mathbf{g}\sim \mathcal{N}(0,\sigma_\beta^2 \M' \M)$. \\
 
-It is known that translations of the marker coding, that is subtracting a constant $p_i$ from the $i$-th column of $\M$ does not change the predictions $\hat{\y}$ of an \emph{ordinary least squares regression} (OLS) (provided it is well-defined). This invariance also holds for RRBLUP, when the variance components remain unchanged. However, when modeling interactions by products of the predictor variables, that is when fitting the coefficients of a polynomial of degree two to the data, OLS predictions are not affected by translations of the marker coding, but the predictions of its penalized regression analogue \emph{extended genomic best linear unbiased prediction} (EGBLUP) indeed are sensible to a translation of the coding.\\
+It is known that translations of the marker coding, that is subtracting a constant $p_i$ from the $i$-th column of $\M$ does not change the predictions $\hat{\y}$ of an  OLS regression (provided it is well-defined). This invariance also holds for RRBLUP, when the variance components remain unchanged. However, when modelling interactions by products of two predictor variables, that is when fitting the coefficients of a polynomial of degree two to the data, OLS predictions are not affected by translations of the marker coding, but the predictions of its penalized regression analogue \emph{extended genomic best linear unbiased prediction} (EGBLUP) indeed are sensible to a translation of the coding.\\
 
-In this work we will address the question why the penalized regression method is affected by translations of the marker coding when a polynomial function of higher degree is used. 
+In this work we will address the question of why the penalized regression method is affected by translations of the marker coding when a polynomial function of higher degree is used. 
 We will start with a short recapitulation of the different methods.
 
 
 
 \section*{Theory: Specification of regression methods}
-We will specify the different models and regressions in the following. 
+In the following we specify the relevant models and regressions to answer the research question previously stated. 
 If an expression includes an inverse of a matrix, we implicitly assume that the matrix is invertible for the respective statement, also if not mentioned explicitly. 
 Analogously, some statements for OLS may implicitly assume that a unique estimate exists, which for instance implicitly restricts to cases of $n>p$ for OLS. \vspace{0.4cm} \\
 {\bf Additive effect regression}\vspace{0.2cm}\\ 
@@ -368,14 +368,14 @@ The ordinary least squares approach is to determine $\bm{\beta}$ by minimizing t
 	\begin{pmatrix}
 		\hat{\mu} \\
 		\hat{\bm{\beta}}
-	\end{pmatrix}_{OLS} := \argmin_{(\mu,\bm{\beta}) \in \mathbb{R}^{p+1}} \sum\limits_{i=1}^n (y_i - \M_{i,\bullet}\bm{\beta} - \mu)^2
+	\end{pmatrix}_{\mbox{\small OLS}} := \argmin_{(\mu,\bm{\beta}) \in \mathbb{R}^{p+1}} \sum\limits_{i=1}^n (y_i - \M_{i,\bullet}\bm{\beta} - \mu)^2
 \end{equation}
 $\M_{i,\bullet}$ denotes here the $i$-th row of $\M$, that is the genomic data of individual $i$. The solution to the minimization problem of Eq.~(\ref{eq:03}) is given by the well-known OLS estimate
 \begin{equation}\label{eq:04}
 	\begin{pmatrix}
 		\hat{\mu} \\
 		\hat{\bm{\beta}}
-	\end{pmatrix}_{OLS} =
+	\end{pmatrix}_{\mbox{\small OLS}} =
 	\left( 
 	\begin{pmatrix}
 		\mathbf{1}_n & \hspace{-0.2cm}\M
@@ -399,16 +399,16 @@ Due to this overfit, the quality of predictions $\hat{\mathbf{y}}$ for genotypes
 	\begin{pmatrix}
 		\hat{\mu} \\
 		\hat{\bm{\beta}}
-	\end{pmatrix}_{RR_\lambda} :=\argmin_{(\mu,\bm{\beta}) \in \mathbb{R}^{p+1}} \sum\limits_{i=1}^n (y_i - \M\bm{\beta} - \mu)^2  + \lambda \sum\limits_{j=1}^p {\beta}_j^2
+	\end{pmatrix}_{\mbox{\small RR}_\lambda} :=\argmin_{(\mu,\bm{\beta}) \in \mathbb{R}^{p+1}} \sum\limits_{i=1}^n (y_i - \M\bm{\beta} - \mu)^2  + \lambda \sum\limits_{j=1}^p {\beta}_j^2
 \end{equation}
-for a penalty factor $\lambda > 0$. Using an approach of maximizing the density of the joint distribution of $(\mathbf{y},\bm{\beta})$, the model specifications of ${\beta_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\beta^2)$ and ${\epsilon_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\epsilon^2)$ allow to determine the penalty factor as ratio of the variance components  as $\lambda := \frac{\sigma_\epsilon^2}{\sigma_\beta^2}$. Note again that Eq.~(\ref{eq:05}) is not a pure ridge regression (RR), as the name RRBLUP might suggest, but a mixed model which treats $\mu$ and $\bb$ differently by not penalizing the size of $\mu$. This is the version which is most frequently used in the context of genomic prediction (often with additional fixed effects). \\
+for a penalty factor $\lambda > 0$. Using an approach of maximizing the density of the joint distribution of $(\mathbf{y},\bm{\beta})$, the model specifications of ${\beta_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\beta^2)$ and ${\epsilon_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\epsilon^2)$ allow to determine the penalty factor as ratio of the variance components  as $\lambda := \frac{\sigma_\epsilon^2}{\sigma_\beta^2}$. We stress that Eq.~(\ref{eq:05}) is not a pure ridge regression (RR), as the name RRBLUP might suggest, but a mixed model which treats $\mu$ and $\bb$ differently by not penalizing the size of $\mu$. This is the version which is most frequently used in the context of genomic prediction (often with additional fixed effects). \\
 
-The corresponding solver is given by 
+The corresponding solution is given by 
 \begin{equation}
 	\begin{pmatrix}
 		\hat{\mu} \\
 		\hat{\bm{\beta}}
-	\end{pmatrix}_{RR_\lambda} =
+	\end{pmatrix}_{\mbox{\small RR}_\lambda} =
 	\left( 
 	\begin{pmatrix}
 		\mathbf{1}_n & \hspace{-0.2cm}\M
@@ -427,18 +427,20 @@ The corresponding solver is given by
 \end{equation}
 Here, $\mathbf{0 }_p$ denotes the $p \times 1$ vector of zeros and $\mathbf{I}_p$ the $p$-dimensional identity matrix. 
 The effect of the introduction of the penalization term $\lambda \sum\limits_{i=1}^p {\beta}_i^2$ is that for the minimization of Eq.~(\ref{eq:05}), we have a trade-off between fitting the data optimally and shrinking the square effects to $0$. The method will only ``decide'' to increase the estimate $\hat{\beta}_j$, if the gain from improving the fit is greater than the penalized loss generated by the increase of $\hat{\beta}_j$.  \vspace{0.4cm} \\
+
 {\bf First order epistasis: Polynomials of degree two}\vspace{0.2cm}\\ 
 An extension of the additive model of Eq.~(\ref{eq:01}) is a first order epistasis model given by a polynomial of degree two in the marker data 
 \begin{equation} \label{eq:07}
-	y_i =\mathbf{1}_n \mu + \M_{i,\bullet}\bm{\beta} + \sum\limits_{j>k=1}^p h_{j,k}M_{i,j}M_{i,k} + \bm{\epsilon}
+	y_i =\mathbf{1}_n \mu + \M_{i,\bullet}\bm{\beta} + \sum\limits_{k=1}^p\sum\limits_{j=k+1}^p h_{j,k}M_{i,j}M_{i,k} + \bm{\epsilon}
 \end{equation}\vspace{0.1cm}\\
 {\bf OLS} Since the model is still linear in the coefficients, Eq.~(\ref{eq:04}) represents the OLS solution, but with a modified matrix $\M$ including the products of markers as additional predictor variables. \vspace{0.4cm}\\
 {\bf eRRBLUP}
 The extended RRBLUP is based on the additional assumption of $h_{j,k }\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_h^2 )$. Also here the solution is given by an analogon of Eq.~(\ref{eq:06}), but with two different penalty factors $\lambda_1:=\frac{\sigma_\epsilon^2}{\sigma_\beta^2}$ and $\lambda_2:=\frac{\sigma_\epsilon^2}{\sigma_h^2}$.
 \vspace{0.4cm}\\
+
 {\bf Translations of the marker coding}\vspace{0.2cm}\\
 In quantitative genetics, often allele frequencies are subtracted from the original $0$, $1$, $2$ coding of $\M$ to 
-use $\tilde{\M}:=\M-\mathbf{1}_n\P'$ with $\P$ the vector of column means of $\M$ such that $$\sum\limits_{i=1,...,n} \tilde{M}_{i,j} = 0\; \forall j \in \{1,...,p\}.$$ However, also other types of translations, for instance a symmetric $\{-1,0,1\}$ coding can be found in quantitative genetics literature. Thus, the question occurs whether this has an impact on the estimates of the marker effects or on the prediction of new genotypes. \\
+use $\tilde{\M}:=\M-\mathbf{1}_n\P^t$ with $\P$ the vector of column means of $\M$ such that $$\sum\limits_{i=1,...,n} \tilde{M}_{i,j} = 0\; \forall j \in \{1,...,p\}.$$ However, also other types of translations, for instance a symmetric $\{-1,0,1\}$ coding can be found in quantitative genetics literature. Thus, the question occurs whether this has an impact on the estimates of the marker effects or on the prediction of new genotypes. \\
 
 The answer is that for the additive setup of Eq.~(\ref{eq:01}), a shift from $\M$ to $\tilde{\M}$ will change $\hat{\mu}$ but not $\hat{\bm{\beta}}$ and any prediction $\hat{\mathbf{y}}$ will not be affected, neither for OLS, nor for RRBLUP (provided that $\lambda$ is not changed). This invariance we observe for the additive model does not hold for the extended RRBLUP method.
 
@@ -446,7 +448,7 @@ We will give an example and discuss the effect of translations of the marker cod
 
 \begin{example}[Translations of the marker coding]\label{ex:06}
 	Let the marker data of five individuals with two markers be given:
-	$$\mathbf{y}= (-0.72,2.34,0.08,-0.89,0.86) \qquad 
+	$$\mathbf{y}= (-0.72,2.34,0.08,-0.89,0.86)^t \qquad 
 	\M = \begin{pmatrix}
 	2 & 2 \\
 	1 & 2 \\
@@ -454,15 +456,15 @@ We will give an example and discuss the effect of translations of the marker cod
 	2 & 1 \\
 	1 & 0 \\
 	\end{pmatrix} $$ 
-	Moreover, let us use the original matrix $\M$, and the by allele frequencies centered matrix $\tilde{\M}:= \M - \mathbf{1}\underbrace{(1.6,1)}_{=:\P'}$.
+	Moreover, let us use the original matrix $\M$, and the by allele frequencies centered matrix $\tilde{\M}:= \M - \mathbf{1}\underbrace{(1.6,1)}_{=:\P^t}$.
 	We consider the first order epistasis model $$y_i := \mu + \beta_1 M_{i,1} + \beta_2 M_{i,2}  + h_{1,2} M_{i,1}M_{i,2} + \epsilon_i.$$
-	Then, we receive for the corresponding OLS estimates based on $\M$ and $\tilde{\M}$
+	Then, we obtain for the corresponding OLS estimates based on $\M$ and $\tilde{\M}$
 	$$\begin{pmatrix}
 	\hat{\mu} \\
 	\hat{\beta}_1 \\
 	\hat{\beta}_2 \\
 	\hat{h}_{1,2}
-	\end{pmatrix}_{OLS} = \begin{pmatrix}
+	\end{pmatrix}_{\mbox{\small OLS}} = \begin{pmatrix}
 	1.83 \\
 	-0.97\\
 	1.88 \\
@@ -473,7 +475,7 @@ We will give an example and discuss the effect of translations of the marker cod
 	\tilde{\beta}_1 \\
 	\tilde{\beta}_2 \\
 	\tilde{h}_{1,2}
-	\end{pmatrix}_{OLS}= \begin{pmatrix}
+	\end{pmatrix}_{\mbox{\small OLS}}= \begin{pmatrix}
 	0.334\\
 	-2.11 \\
 	0.056 \\
@@ -482,14 +484,14 @@ We will give an example and discuss the effect of translations of the marker cod
 	Note here that the estimated effects $\hat{\mu}$ and $\hat{\bb}$ change, but the estimated interaction $\hat{h}_{1,2}$ as well as $\hat{\mathbf{y}}$ remain unchanged. \\
 	
 	
-	Contrarily, if we apply the mixed model RRBLUP of Eq.~(\ref{eq:06}) with $\lambda=1$ as penalty factor for additive effects and the interaction, we receive
+	Contrarily, if we apply the mixed model RRBLUP of Eq.~(\ref{eq:06}) with $\lambda=1$ as penalty factor for additive effects and the interaction, we find
 	
 	$$\begin{pmatrix}
 	\hat{\mu} \\
 	\hat{\beta}_1 \\
 	\hat{\beta}_2 \\
 	\hat{h}_{1,2}
-	\end{pmatrix}_{RR_{\lambda = 1}} = \begin{pmatrix}
+	\end{pmatrix}_{\mbox{\small RR}_{\lambda = 1}} = \begin{pmatrix}
 	1.81\\
 	-0.89\\
 	0.71\\
@@ -500,7 +502,7 @@ We will give an example and discuss the effect of translations of the marker cod
 	\tilde{\beta}_1 \\
 	\tilde{\beta}_2 \\
 	\tilde{h}_{1,2}
-	\end{pmatrix}_{RR_{\lambda = 1}}= \begin{pmatrix}
+	\end{pmatrix}_{\mbox{\small RR}_{\lambda = 1}}= \begin{pmatrix}
 	0.334\\
 	-1.151 \\
 	0.090 \\
@@ -509,7 +511,7 @@ We will give an example and discuss the effect of translations of the marker cod
 	Both solutions produce different predictions $\hat{\mathbf{y}}$ for the matrices $\M$ and $\tilde{\M}$. \\
 	
 	If we only penalize the effect size of the interaction term, both methods give different estimates for the fixed effect and for the additive effects, but the same predictions $\hat{h}_{1,2}$ and $\hat{\mathbf{y}}$ - independent of the translation. 
-	To distinguish the different approaches, we use the notation $RR_{\lambda_h = 1}$ for latter regression, which only penalizes the interaction size. 
+	To distinguish the different approaches, we introduce the notation $\mbox{\small RR}_{\lambda_h = 1}$ for latter regression, which only penalizes the interaction size. 
 	$$\begin{pmatrix}
 	\hat{\mu} \\
 	\hat{\beta}_1 \\
@@ -535,13 +537,13 @@ We will give an example and discuss the effect of translations of the marker cod
 	Note again that here $\hat{\mathbf{y}}=\tilde{\mathbf{y}}$. 
 \end{example}
 The different cases presented in Example~\ref{ex:06} have a certain systematic which we will discuss in the following. 
-In particular note that the predictions of $\y$ are for $RR_{\lambda_h = 1}$ independent of the coding.
+In particular note that the predictions of $\y$ are for $\mbox{\small RR}_{\lambda_h = 1}$ independent of the coding.
 
 
 \section*{Results} 
 The observations made in Example~\ref{ex:06} are explained by following simple proposition
 which has several interesting implications.
-\begin{proposition}\label{prop:01} Let $\M_{i,\bullet}$ be the $p$ vector of the marker values of individual $i$ and let $f(\M_{i,\bullet}): \mathbb{R}^p \rightarrow \mathbb{R}$ be a polynomial in the marker data of degree $D$. Moreover, let $\tilde{\M}:= \M - \mathbf{1} \P$ be a translation of the marker coding (as in Example~\ref{ex:06}) and let us define a polynomial $\tilde{f}$ in the translated variables $\tilde{\M}$ by $\tilde{f}(\tilde{\M}_{i,\bullet}):= f(\tilde{\M}_{i,\bullet} +  \P)=f(\M_{i,\bullet})$. Then for any data $\y$, the sum of squared distances will be identical 
+\begin{proposition}\label{prop:01} Let $\M_{i,\bullet}$ be the $p$ vector of the marker values of individual $i$ and let $f(\M_{i,\bullet}): \mathbb{R}^p \rightarrow \mathbb{R}$ be a polynomial in the marker data of degree $D$. Moreover, let $\tilde{\M}:= \M - \mathbf{1} \P^t$ be a translation of the marker coding (as in Example~\ref{ex:06}) and let us define a polynomial $\tilde{f}$ in the translated variables $\tilde{\M}$ by $\tilde{f}(\tilde{\M}_{i,\bullet}):= f(\tilde{\M}_{i,\bullet} +  \P^t)=f(\M_{i,\bullet})$. Then for any data $\y$, the sum of squared distances will be identical 
 	$$ \sum_{i=1,...,n} (y_i - f(\M_{i,\bullet}))^2 = \sum_{i=1,...,n} (y_i - \tilde{f}(\tilde{\M}_{i,\bullet}))^2 $$
 	and for any monomial $m$ of degree $D$, the corresponding coefficient $a_m$ in $f(\M_{i,\bullet})$ and $\tilde{a}_m$ in $\tilde{f}(\tilde{\M}_{i,\bullet})$ will be identical:
 	$$a_m = \tilde{a}_m.$$ \qed
@@ -555,13 +557,12 @@ We cannot adapt the regression completely if certain coefficients are forced to 
 We will illustrate this with an example. 
 
 \begin{example}[Models without certain terms of intermediate degree]\label{ex:07}
-	Let us consider the data $\M$ and $\y$ of Example \ref{ex:06} but with the assumption that marker $2$ does not have an additive effect.\\
-	Then
+	Let us consider the data $\M$ and $\y$ of Example \ref{ex:06} but with the assumption that marker $2$ does not have an additive effect. Then
 	$$\begin{pmatrix}
 	\hat{\mu} \\
 	\hat{\beta}_1 \\
 	\hat{h}_{1,2}
-	\end{pmatrix}_{OLS} = \begin{pmatrix}
+	\end{pmatrix}_{\mbox{\small OLS}} = \begin{pmatrix}
 	3.71 \\
 	-2.098\\
 	-0.012\\
@@ -570,15 +571,15 @@ We will illustrate this with an example.
 	\tilde{\mu} \\
 	\tilde{\beta}_1 \\
 	\tilde{h}_{1,2}
-	\end{pmatrix}_{OLS}= \begin{pmatrix}
+	\end{pmatrix}_{\mbox{\small OLS}}= \begin{pmatrix}
 	0.334\\
 	-2.11 \\
 	-1.162
 	\end{pmatrix} $$
 	and also the estimates $\hat{\y}$ and $\tilde{\y}$ are different. 
 \end{example}
-Example~\ref{ex:07} illustrates that the models requires a ``completeness" of the model to have the possibility to adapt to translations of the coding. 
-In more detail, for any monomial of degree $d$, the model has to include all monomials of lower degree with these variables. If this is not the case, the adapted $\tilde{f}$ may not be a valid fit. Given that the model is ``complete" in this sense, Proposition~\ref{prop:01} has various implications.
+Example~\ref{ex:07} illustrates that   ``completeness" of the model is required to have the possibility to adapt to translations of the coding. 
+More precisely, for any monomial of degree $d$, the model has to include all monomials of lower degree with these variables. If this is not the case, the adapted $\tilde{f}$ may not be a valid fit. Given that the model is ``complete" in this sense, Proposition~\ref{prop:01} has various implications.
 The following corollary explains the results observed in our examples and some additional properties of penalized regression methods.  
 
 \begin{corollary}\label{cor:01}
@@ -598,7 +599,7 @@ Corollary~\ref{cor:01} b) applied to complete polynomials of degree $1$ gives th
 Before, we illustrate the impact on a publicly available data set, we give a small example highlighting cases which are not invariant to translations of the marker coding.
 We recommend to use the data of Example~\ref{ex:06} to validate the statements.
 
-\begin{example}
+\begin{example}~\\
 	\begin{itemize} \item[a)] Pure ridge regression (with penalty on $\mu$) is not invariant to translations. 
 		\item[b)] RRBLUP with the fixed effect forced to zero is not invariant to translations of the marker coding.
 				\item[c)] An extended LASSO $\ell_1$ penalizing additive effects and interactions is not in general invariant to translations of the coding.
@@ -607,7 +608,7 @@ We recommend to use the data of Example~\ref{ex:06} to validate the statements.
 {\bf Results on a wheat data set}\\
 
   
-\paragraph{Data} We use the well-investigated wheat data set published by Crossa et al. . The data set provides the state of $1279$ DArT markers of $599$ genotyped wheat lines and records on their yield in four different environments. The provided coding of the marker data is a $0,1$ coding. For more details on the data see Corssa and BGLR. \\
+\paragraph{Data} We use the well-investigated wheat data set published by Crossa et al. The data set provides the state of $1279$ DArT markers of $599$ genotyped wheat lines and records on their yield in four different environments. The provided coding of the marker data is a $0,1$ coding. For more details on the data see Corssa and BGLR. \\
 
 \paragraph{Calculating the interaction effects} 
 The assessment of the practical implications of translations of the marker coding on the effect estimates is difficult. 
@@ -621,7 +622,7 @@ For each of the environments, we compare the correlation of the estimated $4450$
 We see that the estimates are highly correlated, but not identical. In particular, the effects sizes seem to be more similar between the original $0,1$ coding and the $\pm 0.5$ coding than compared to the allele-frequency centered version.
 
 \begin{table}[ht] \caption{Correlation of the estimates of the $4450$ interactions with different marker coding. Colors indicate which data from which environment was used. 
-	Blck: Environment 1; Red: Environment 2; Green: Environment 3; Blue: Environment 4.}\label{tab:01}
+	Black: Environment 1; Red: Environment 2; Green: Environment 3; Blue: Environment 4.}\label{tab:01}
 	\centering
 	\begin{tabular}{rrr}
 		\hline
