@@ -1,0 +1,85 @@
+\documentclass[12pt,oneside]{article}
+\input{prmb}
+
+%\usepackage{kpfonts}
+\usepackage{amsmath}
+
+\makeatletter
+\newcommand{\doublewidetilde}[1]{{%
+  \mathpalette\double@widetilde{#1}%
+}}
+\newcommand{\double@widetilde}[2]{%
+  \sbox\z@{$\m@th#1\widetilde{#2}$}%
+  \ht\z@=.9\ht\z@
+  \widetilde{\box\z@}%
+}
+\makeatother
+\begin{document}
+\title{\bf We Need to Talk about Interactions}
+\date{}
+\author{F. Rosales}
+\maketitle
+The following is trivial and perhaps not all that rigorous. Regardless, I hope the argument is clear. 
+\section{OLS}
+Consider the usual model
+\beq\label{ols}
+\mY=\alpha_0\onevec+\alpha_1\xvec_1+\alpha_2\xvec_2+\alpha_3\xvec_3,\quad \xvec_3=\xvec_1\circ\xvec_2
+\eeq
+and its centred version
+\beq\label{ols.centred}
+\mY&=&\beta_0\onevec+\beta_1\tilde\xvec_1+\beta_2\tilde\xvec_2+\beta_3\tilde\xvec_3\nonumber\\
+&=&\beta_0\onevec+\beta_1(\xvec_1-\bar\xvec_1)+\beta_2(\xvec_2-\bar\xvec_2)+\beta_3\{(\xvec_1\circ\xvec_2)-\overline{(\xvec_1\circ\xvec_2)}\}\nonumber\\
+&=&\underbrace{\{\beta_0-\beta_1\bar\xvec_1-\beta_2\bar\xvec_2-\beta_3\overline{(\xvec_1\circ\xvec_2)}\}}_{\mbox{\small const.}}\onevec+\beta_1\xvec_1+\beta_2\xvec_2+\beta_3\xvec_3,
+\eeq
+which  has the same estimator as (\ref{ols}), except for the estimator for the intercept. 
+Now consider the alternative model
+\beq\label{ols.centredx}
+\mY&=&\gamma_0\onevec+\gamma_1\tilde\xvec_1+\gamma_2\tilde\xvec_2+\gamma_3\doublewidetilde\xvec_3\nonumber\\
+&=&\gamma_0\onevec+\gamma_1(\xvec_1-\bar\xvec_1)+\gamma_2(\xvec_2-\bar\xvec_2)+\gamma_3\{(\xvec_1-\bar\xvec_1)\circ(\xvec_2-\bar\xvec_2)\}\nonumber\\
+&=&\underbrace{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}_{\mbox{\small const.}}\onevec+
+\underbrace{(\gamma_1-\bar\xvec_2)}_{\mbox{\small const.}}\xvec_1+\underbrace{(\gamma_2-\bar\xvec_1)}_{\mbox{\small const.}}\xvec_2+\gamma_3\xvec_1\circ\xvec_2,
+\eeq
+which, has the same estimator for the interaction term only, and the justification of  example 1 in the paper is trivial. Moreover, since models (\ref{ols}), (\ref{ols.centred}) and (\ref{ols.centredx}) are the same model, just with a different parametrization, the resulting $\hat\mY$ should be invariant. 
+
+\section{RRBLUP}
+Consider the problem
+\beq
+\hat\gammavec&=&\mbox{argmin}_{\gammavec}\{
+\left\{\mY-\gamma_0\onevec-\gamma_1\xvec_1-\gamma_2\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\right\}^2+
+\lambda(\gamma_1^2+\gamma_2^2+\gamma_3^2)\label{rrblup1}\}\\
+\hat\gammavec&=&\mbox{argmin}_{\gammavec}\{
+\{\mY-{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}\onevec-
+{(\gamma_1-\bar\xvec_2)}\xvec_1-\nonumber\\
+&&{(\gamma_2-\bar\xvec_1)}\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\}^2+
+\lambda(\gamma_1^2+\gamma_2^2+\gamma_3^2)\label{rrblup1x}\}
+\eeq
+This RRBLUP problem is basically the OLS problem with a penalty on all terms except for the intercept. If one assumes that the penalty is fixed to $\lambda=1$, as it is in example 1 of the paper,  the behaviour of the estimated coefficients  can be anticipated. Namely, if one extends 
+\begin{enumerate}
+\item (\ref{ols}) to (\ref{rrblup1}). The expected result is all shrinked estimators except for the intercept. In the paper the values $1.81$ and $1.83$ are reported.
+\item (\ref{ols.centredx}) to (\ref{rrblup1x}). The expected result is, once again, to obtain all shrinked estimators except for the intercept. In this case the value reported is $0.334$ in both models.
+\item (\ref{rrblup1}) to (\ref{rrblup1x}). The models are completely different. 
+\end{enumerate}  
+{\color{red} Note however that under this reasoning $\hat\mY$ must be the same in both (\ref{rrblup1}) and (\ref{rrblup1x}), which is not the case in the paper. Check empirically once again. }
+
+If instead the alternative model is considered
+\beq
+\hat\gammavec&=&\mbox{argmin}_{\gammavec}\{
+\{\mY-\gamma_0\onevec-\gamma_1\xvec_1-\gamma_2\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\}^2+
+\lambda\gamma_3^2\}\label{rrblup2}\\
+\hat\gammavec&=&\mbox{argmin}_{\gammavec}\{
+\{\mY-{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}\onevec-
+{(\gamma_1-\bar\xvec_2)}\xvec_1-\nonumber\\
+&&{(\gamma_2-\bar\xvec_1)}\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\}^2+
+\lambda\gamma_3^2\label{rrblup2x}\},
+\eeq
+as done in the last part of example 1. Now we can make the following comparisons
+\begin{enumerate}
+\item (\ref{rrblup1}) to (\ref{rrblup2}). The expect result is that the estimators $\hat\gamma_0$ and $\hat\gamma_3$ should remain the same, while all the others  must change. {\color{red} This does not hold empirically. Check once again}.
+\item (\ref{rrblup1x}) to (\ref{rrblup2x}). The expect result is that the estimators $\hat\gamma_0$ and $\hat\gamma_3$ should remain the same, while all the others  must change. In the paper we have $0.334$ for the intercept in both models and $-0.575$ and $-0.570$ for models (\ref{rrblup1x}) and (\ref{rrblup2x}) respectively.
+\item (\ref{rrblup2}) to (\ref{rrblup2x}). The expect result is that both models produce the same estimator for $\hat\gamma_3$, which is verified. 
+\end{enumerate}
+
+\end{document}
+
+
+
