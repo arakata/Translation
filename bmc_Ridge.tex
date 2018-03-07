@@ -458,86 +458,34 @@ We will give an example and discuss the effect of translations of the marker cod
 	\end{pmatrix} $$ 
 	Moreover, let us use the original matrix $\M$, and the by allele frequencies centered matrix $\tilde{\M}:= \M - \mathbf{1}\underbrace{(1.6,1)}_{=:\P^t}$.
 	We consider the first order epistasis model $$y_i := \mu + \beta_1 M_{i,1} + \beta_2 M_{i,2}  + h_{1,2} M_{i,1}M_{i,2} + \epsilon_i.$$
-	Then, we obtain for the corresponding OLS estimates based on $\M$ and $\tilde{\M}$
-	$$\begin{pmatrix}
-	\hat{\mu} \\
-	\hat{\beta}_1 \\
-	\hat{\beta}_2 \\
-	\hat{h}_{1,2}
-	\end{pmatrix}_{\mbox{\small OLS}} = \begin{pmatrix}
-	1.83 \\
-	-0.97\\
-	1.88 \\
-	-1.14
-	\end{pmatrix}
-	\qquad \mbox{and} \qquad \begin{pmatrix}
-	\tilde{\mu} \\
-	\tilde{\beta}_1 \\
-	\tilde{\beta}_2 \\
-	\tilde{h}_{1,2}
-	\end{pmatrix}_{\mbox{\small OLS}}= \begin{pmatrix}
-	0.334\\
-	-2.11 \\
-	0.056 \\
-	-1.14
-	\end{pmatrix} $$
-	Note here that the estimated effects $\hat{\mu}$ and $\hat{\bb}$ change, but the estimated interaction $\hat{h}_{1,2}$ as well as $\hat{\mathbf{y}}$ remain unchanged. \\
-	
-	
-	Contrarily, if we apply the mixed model RRBLUP of Eq.~(\ref{eq:06}) with $\lambda=1$ as penalty factor for additive effects and the interaction, we find
-	
-	$$\begin{pmatrix}
-	\hat{\mu} \\
-	\hat{\beta}_1 \\
-	\hat{\beta}_2 \\
-	\hat{h}_{1,2}
-	\end{pmatrix}_{\mbox{\small RR}_{\lambda = 1}} = \begin{pmatrix}
-	1.81\\
-	-0.89\\
-	0.71\\
-	-0.48
-	\end{pmatrix}
-	\qquad \mbox{and} \qquad \begin{pmatrix}
-	\tilde{\mu} \\
-	\tilde{\beta}_1 \\
-	\tilde{\beta}_2 \\
-	\tilde{h}_{1,2}
-	\end{pmatrix}_{\mbox{\small RR}_{\lambda = 1}}= \begin{pmatrix}
-	0.334\\
-	-1.151 \\
-	0.090 \\
-	-0.575
-	\end{pmatrix}. $$
-	Both solutions produce different predictions $\hat{\mathbf{y}}$ for the matrices $\M$ and $\tilde{\M}$. \\
-	
-	If we only penalize the effect size of the interaction term, both methods give different estimates for the fixed effect and for the additive effects, but the same predictions $\hat{h}_{1,2}$ and $\hat{\mathbf{y}}$ - independent of the translation. 
-	To distinguish the different approaches, we introduce the notation $\mbox{\small RR}_{\lambda_h = 1}$ for latter regression, which only penalizes the interaction size. 
-	$$\begin{pmatrix}
-	\hat{\mu} \\
-	\hat{\beta}_1 \\
-	\hat{\beta}_2 \\
-	\hat{h}_{1,2}
-	\end{pmatrix}_{RR_{\lambda_h = 1}} = \begin{pmatrix}
-	2.685\\
-	-1.540\\
-	1.025\\
-	-0.570
-	\end{pmatrix}
-	\qquad \mbox{and} \qquad \begin{pmatrix}
-	\tilde{\mu} \\
-	\tilde{\beta}_1 \\
-	\tilde{\beta}_2 \\
-	\tilde{h}_{1,2}
-	\end{pmatrix}_{RR_{\lambda_h = 1}}= \begin{pmatrix}
-	0.334\\
-	-2.110 \\
-	0.113\\
-	-0.570
-	\end{pmatrix} $$
-	Note again that here $\hat{\mathbf{y}}=\tilde{\mathbf{y}}$. 
+	Then, we obtain  the corresponding estimates based on i) an OLS model, ii) a the mixed model RRBLUP1 of Eq.~(\ref{eq:06}) with $\lambda=1$, and iii) a  mixed model RRBLUP2 of EQ.~(\ref{eq:06}) with $\lambda=1$ when $\beta_1$ and $\beta_2$ are non-penalized. The results are reported in table~\ref{table:example1}. The columns labeled ``centred" correspond to the usage of design matrix $\M$, and the columns labeled ``uncentered" correspond to the usage of design matrix $\tilde\M$.
+
+\begin{table}[ht] \caption{Results from Example 1}\label{table:example1}
+\centering
+\begin{tabular}{|l|r|r|r||r|r|r|}
+\hline
+&\multicolumn{3}{c||}{Non-Centred ($\M$)}&\multicolumn{3}{c|}{Centred ($\tilde\M$)}\\ 
+\hline
+Coeffs.&OLS&RRBLUP1&RRBLUP2&OLS&RRBLUP1&RRBLUP2\\
+\hline
+$\mu$&1.83&1.81&2.69&0.33&0.33&0.33\\
+$\beta_1$&-0.97&-0.89&-1.54&-2.11&-1.15&-2.11\\
+$\beta_2$&1.88&0.71&1.03&0.06&0.09&0.11\\
+$h_{1,2}$&-1.14&-0.48&-0.57&-1.14&-0.56&-0.56\\
+\hline 
+\end{tabular}
+\end{table}
+
+We summarize our observations from the reported results as follows:
+\begin{itemize}
+\item Comparing the two OLS models, the estimated effects $\mu$, $\beta_1$ and $\beta_2$ change, but the estimated interaction $\hat{h}_{1,2}$ as well as $\hat{\mathbf{y}}$ remain unchanged.
+\item Comparing the two RRBLUP1 models, both methods give different estimates for all the parameters and the solutions produce different predictions $\hat{\mathbf{y}}$.
+\item Comparing the two RRBLUP2 models, both methods give different estimates for $\mu$, $\beta_1$ and $\beta_2$, but the same for $h_{1,2}$, as well as $\hat{\mathbf{y}}$.
+\end{itemize}
 \end{example}
-The different cases presented in Example~\ref{ex:06} have a certain systematic which we will discuss in the following. 
-In particular note that the predictions of $\y$ are for $\mbox{\small RR}_{\lambda_h = 1}$ independent of the coding.
+
+The different cases presented in Example~\ref{ex:06} have a certain systematic pattern, which we will discuss in the following section. 
+%In particular note that the predictions of $\y$ are for $\mbox{\small RR}_{\lambda_h = 1}$ independent of the coding.
 
 
 \section*{Results} 
