@@ -15,7 +15,7 @@
 }
 \makeatother
 \begin{document}
-\title{\bf We Need to Talk about Interactions}
+\title{\bf The Killing of a Sacred Idea}
 \date{}
 \author{F. Rosales}
 \maketitle
@@ -41,58 +41,55 @@ Now consider the alternative model
 \eeq
 Hence, Model (\ref{ols}), or any of its parametrizations, are solved via
 \beq\label{ols.sol}
-\hat\deltavec=\mbox{argmin}_{\deltavec}\calV(\deltavec),\quad \calV(\deltavec):=
-\left\{\mY-\delta_0\onevec-\delta_1\xvec_1-\delta_2\xvec_2-\delta_3(\xvec_1\circ\xvec_2)\right\}^2.
+\hat\deltavec&=&\mbox{argmin}_{\deltavec}\left\{\evec(\deltavec)^\top\evec(\deltavec)\right\}\nonumber\\
+\evec(\deltavec)&:=&\mY-\delta_0\onevec-\delta_1\xvec_1-\delta_2\xvec_2-\delta_3(\xvec_1\circ\xvec_2),
 \eeq
-Since (\ref{ols.sol}) has the same form  for models (\ref{ols})-(\ref{ols.centredx}), the solver leads to the
- same solution, so $\hat\mY$ must be the same in all cases. Regarding the parameters we note that
+for suitable definitions of $\deltavec$. Since (\ref{ols.sol}) has the same form  for models (\ref{ols})-(\ref{ols.centredx}), the solver leads to the
+ same solution, so $\hat\mY$ must be the same in all cases. Regarding the parameters:
  \begin{enumerate}
- \item (\ref{ols}) and (\ref{ols.centred}) must have exactly the same estimators for additive and interaction effects, but the intercept should be different. This is observed in the paper. 
- \item (\ref{ols}) and (\ref{ols.centredx}) must have different estimators for the additive effects and the intercept, but the coefficient related to interactions should be the same. This is also observed in the paper. 
+ \item (\ref{ols}) and (\ref{ols.centred}) must have exactly the same estimators for additive and interaction effects, but the intercept should be different. %This is observed in the paper. 
+ \item (\ref{ols}) and (\ref{ols.centredx}) must have different estimators for the additive effects and the intercept, but the coefficient related to interactions should be the same. %This is also observed in the paper. 
  \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{RRBLUP}
-We can regularize the estimated coefficients via penalizatio by 
+We can regularize the estimated coefficients via penalization by 
 \beq
-\hat\alphavec&=&\mbox{argmin}_{\alphavec}\calV(\alphavec),\nonumber\\
-\calV(\alphavec)&:=&
-\left\{\mY-\alpha_0\onevec-\alpha_1\xvec_1-\alpha_2\xvec_2-\alpha_3(\xvec_1\circ\xvec_2)\right\}^2+
-\lambda(\alpha_1^2+\alpha_2^2+\alpha_3^2)\label{rrblup1}
+\hat\alphavec&=&\mbox{argmin}_{\alphavec}\{\evec(\alphavec)^\top\evec(\alphavec)+
+\lambda(\alpha_1^2+\alpha_2^2+\alpha_3^2)\},\nonumber\\
+\evec(\alphavec)&:=&
+\mY-\alpha_0\onevec-\alpha_1\xvec_1-\alpha_2\xvec_2-\alpha_3(\xvec_1\circ\xvec_2)\label{rrblup1}
 \eeq
-or
-\beq
-\hat\gammavec&=&\mbox{argmin}_{\gammavec}\calV(\gammavec),\nonumber\\
-\calV(\gammavec)&:=&
-\{\mY-{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}\onevec-
-{(\gamma_1-\bar\xvec_2)}\xvec_1-\nonumber\\
-&&{(\gamma_2-\bar\xvec_1)}\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\}^2+
-\lambda(\gamma_1^2+\gamma_2^2+\gamma_3^2)\label{rrblup1x}
-\eeq
+%or by
+%\beq
+%\hat\gammavec&=&\mbox{argmin}_{\gammavec}\{\evec(\gammavec)^\top\evec(\gammavec)+
+%\lambda(\gamma_1^2+\gamma_2^2+\gamma_3^2)\},\nonumber\\
+%\evec(\gammavec)&:=&
+%\mY-{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}\onevec-
+%{(\gamma_1-\bar\xvec_2)}\xvec_1-\nonumber\\
+%&&{(\gamma_2-\bar\xvec_1)}\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\label{rrblup1x}
+%\eeq
 
-These RRBLUP problems are basically the OLS problem with a penalty on all terms except for the intercept for the extensions of solvers for model (\ref{ols}) and (\ref{ols.centredx}) respectively. 
-
-If one assumes that the penalty is fixed to $\lambda=1$, as it is in example 1 of the paper,  the behaviour of the estimated coefficients  can be anticipated. Namely, if one extends 
+This RRBLUP problems is  just the  OLS problem with a penalty on all terms except for the intercept. Moreover, if one assumes that the penalty is fixed to $\lambda=1$, the behaviour of the estimated coefficients  can be anticipated. Namely, 
 \begin{enumerate}
-\item (\ref{ols}) to (\ref{rrblup1}). The expected result is all shrinked estimators except for the intercept. In the paper the values $1.81$ and $1.83$ are reported.
-\item (\ref{ols.centredx}) to (\ref{rrblup1x}). The expected result is, once again, to obtain all shrinked estimators except for the intercept. In this case the value reported is $0.334$ in both models.
-\item (\ref{rrblup1}) to (\ref{rrblup1x}). The models are completely different regarding parameter estimation. 
+\item If one extends solver  (\ref{ols.sol}) to (\ref{rrblup1}). The expected result is all shrinked estimators except for the intercept. In the paper the values $1.81$ and $1.83$ are reported for uncentred model (\ref{ols}) and $0.334$ and $0.334$ are reported for alternative  model (\ref{ols.centredx}).
+\item If one applies solver (\ref{rrblup1}) to either model (\ref{ols}) or to (\ref{rrblup1}), the estimated parameters should all be different, but   $\hat\mY$ must be the same. {\color{red} This does not happen}.
 \end{enumerate}  
-{\color{red} Note however that under this reasoning $\hat\mY$ must be the same in both (\ref{rrblup1}) and (\ref{rrblup1x}), which is not the case in the paper. Check empirically once again. }
 
 If instead the alternative models are considered
 \beq
-\hat\alphavec&=&\mbox{argmin}_{\alphavec}\calV(\alphavec),\nonumber\\
-\calV(\alphavec)&:=&
-\{\mY-\alpha_0\onevec-\alpha_1\xvec_1-\alpha_2\xvec_2-\alpha_3(\xvec_1\circ\xvec_2)\}^2+
-\lambda\alpha_3^2\label{rrblup2}
+\hat\alphavec&=&\mbox{argmin}_{\alphavec}\{\evec(\alphavec)^\top\evec(\alphavec)+
+\lambda\alpha_3^2\},\nonumber\\
+\evec(\alphavec)&:=&
+\mY-\alpha_0\onevec-\alpha_1\xvec_1-\alpha_2\xvec_2-\alpha_3(\xvec_1\circ\xvec_2)\label{rrblup2}
 \eeq
 or
 \beq
-\hat\gammavec&=&\mbox{argmin}_{\gammavec}\calV(\gammavec),\nonumber\\
-\calV(\gammavec)&:=&\{\mY-{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}\onevec-
+\hat\gammavec&=&\mbox{argmin}_{\gammavec}\{\evec(\gammavec)^\top\evec(\gammavec)+
+\lambda\gamma_3^2\},\nonumber\\
+\evec(\gammavec)&:=&\mY-{(\gamma_0-\gamma_1\bar\xvec_1-\gamma_2\bar\xvec_2+\gamma_3\bar\xvec_1\bar\xvec_2)}\onevec-
 {(\gamma_1-\bar\xvec_2)}\xvec_1-\nonumber\\
-&&{(\gamma_2-\bar\xvec_1)}\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\}^2+
-\lambda\gamma_3^2\label{rrblup2x},
+&&{(\gamma_2-\bar\xvec_1)}\xvec_2-\gamma_3(\xvec_1\circ\xvec_2)\label{rrblup2x},
 \eeq
 as done in the last part of example 1, we observe some other things:
 \begin{enumerate}
