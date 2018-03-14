@@ -511,8 +511,9 @@ which has several interesting implications.
 \begin{proposition}\label{prop:01} Let $\M_{i,\bullet}$ be the $p$ vector of the marker values of individual $i$ and let $f(\M_{i,\bullet}): \mathbb{R}^p \rightarrow \mathbb{R}$ be a polynomial of degree $D$ in the marker data. Moreover, let $\tilde{\M}:= \M - \mathbf{1} \P^t$ be a translation of the marker coding (as in Example~\ref{ex:06}) and let us define a polynomial $\tilde{f}$ in the translated variables $\tilde{\M}$ by $\tilde{f}(\tilde{\M}_{i,\bullet}):= f(\tilde{\M}_{i,\bullet} +  \P^t)=f(\M_{i,\bullet})$. Then for any data $\y$, the sum of squared distances will be identical 
 	$$ \sum_{i=1,...,n} (y_i - f(\M_{i,\bullet}))^2 = \sum_{i=1,...,n} (y_i - \tilde{f}(\tilde{\M}_{i,\bullet}))^2 $$
 	and for any monomial $m$ of degree $D$, the corresponding coefficient $a_m$ of $f(\M_{i,\bullet})$ and $\tilde{a}_m$ of $\tilde{f}(\tilde{\M}_{i,\bullet})$ will be identical:
-	$$a_m = \tilde{a}_m.$$ \qed
+	$$a_m = \tilde{a}_m.$$ 
 \end{proposition}
+
 Proposition~\ref{prop:01} has the very simple statement that if we have a certain fit $f$ based on $\M$, and we use the translated marker coding $\tilde{\M}$ in a second regression, the polynomial $\tilde{f}$ will fit the data with the same quadratic distance but also with the same predictions $\hat{\y}$ (due to the definition of $\tilde{f}$). Moreover, the coefficients of highest degree will be the same.  \\
 
 Since OLS is defined only by the minimal quadratic distance, this also means that it is invariant to any translation of the coding, provided that the model structure allows the fit to 
@@ -545,23 +546,33 @@ We illustrate this with an example.
 \end{example}
 Example~\ref{ex:07} illustrates that ``completeness" of the model is required to have the possibility to adapt to translations of the coding. 
 More precisely, for any monomial of degree $d$, the model has to include all monomials of lower degree with these variables. If this is not the case, the adapted $\tilde{f}$ of Proposition~\ref{prop:01} may not be a valid fit. Given that the model is ``complete" in this sense, Proposition~\ref{prop:01} has various implications.
-The following corollary explains the results observed in our examples and some additional properties of penalized regression methods.  
+The following corollaries explain the results observed in our examples and highlight some additional properties of penalized regression methods in general.  
+For all statements, it is assumed that penalty factors remain unchanged and that the model is complete in the sense that for any $f$, the corresponding $\tilde{f}$ is a valid fit.
 
 \begin{corollary}\label{cor:01}
-	For all statements, it is assumed that penalty factors remain unchanged and that the model is complete in the sense that for any $f$, the corresponding $\tilde{f}$ is a valid fit.
-	\begin{itemize}
-\item [a)] 	For a model of any degree $D$, the OLS estimates of the coefficients of highest degree as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding.
-		\item [b)] For a regression, which only penalizes the coefficients of highest degree $D$, the estimates of the coefficients degree $D$ as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding.
-		\item[c)] 	In particular, predictions $\hat{\y}$ of RRBLUP are invariant with respect to translations of the marker coding, since we are dealing with a model of degree 1 and a regression that does not penalize the fixed effect (degree 0).
-		\item[d)] An additive least absolute shrinkage and selection operator (LASSO) regression $\ell_1$~penalizing the marker effects but not the intercept is invariant to translations of the marker coding. 
-
-	\end{itemize}
+	For a model of any degree $D$, the OLS estimates of the coefficients of highest degree as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding. 
 \end{corollary}
-Corollary~\ref{cor:01}a) is a result of the OLS method being defined only by the sum of squares and explains why the OLS estimates $\hat{h}_{1,2}$ and $\tilde{h}_{1,2}$ of Example~\ref{ex:06} are identical. Part b) is a results of the following observation: For each $f$, its corresponding $\tilde{f}$ will have the same sum of squared distances and the same coefficients of highest degree (with the translated marker coding). Thus, it will have the same value for the target function of Eq.~(\ref{eq:05}) which we aim to minimize.
-Since this is true for any polynomial $f$, it is in particular true for the solution minimizing the target function.
-Corollary~\ref{cor:01}b) applied to complete models of degree $1$ gives the result of RRBLUP being invariant to translations of the marker coding, which has previously for instance been proven using the mixed model equations \cite{Martini17} (which is slightly more complicated and less general than the argumentation here). Part d) illustrates that these observations also transfer to other types of penalized regressions, for instance to LASSO. 
+Corollary~\ref{cor:01} is a result of the OLS method being defined only by the sum of squares and explains why the OLS estimates $\hat{h}_{1,2}$ and $\tilde{h}_{1,2}$ of Example~\ref{ex:06} are identical. We can simply use the adapted polynomial $\tilde{f}$ described instead of $f$ and receive the same sum of squared distances. 	
 
-Before, we illustrate the impact on a publicly available data set, we give a small example highlighting cases, which are not invariant to translations of the marker coding.
+	\begin{corollary}\label{cor:02} For a regression, which only penalizes the coefficients of highest degree $D$, the estimates of the coefficients degree $D$ as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding. 
+	\end{corollary}
+
+Corollary~\ref{cor:02}is a results of the following observation: For each $f$, its corresponding $\tilde{f}$ will have the same sum of squared distances and the same coefficients of highest degree (with the translated marker coding). Thus, it will have the same value for the target function of Eq.~(\ref{eq:05}) which we aim to minimize.
+Since this is true for any polynomial $f$, it is in particular true for the solution minimizing the target function. 
+A central point of Corollary~\ref{cor:02} is that it is valid for any penalty on the size of the estimated coefficients of highest degree, but the requirement is that only these coefficients of highest degree are penalized.
+
+
+	\begin{corollary}\label{cor:03}	In particular, predictions $\hat{\y}$ of RRBLUP are invariant with respect to translations of the marker coding, since we are dealing with a model of degree 1 and a regression that does not penalize the fixed effect (degree 0). 
+	\end{corollary}
+Corollary~\ref{cor:02} applied to complete models of degree $1$ gives the result of Corollary~\ref{cor:03}, that is RRBLUP being invariant to translations of the marker coding.
+This has has previously for instance been proven using the mixed model equations \cite{Martini17} (which is slightly more complicated and less general than the argumentation here).
+
+
+		\begin{corollary}\label{cor:04} An additive least absolute shrinkage and selection operator (LASSO) regression $\ell_1$~penalizing the marker effects but not the intercept is invariant to translations of the marker coding. 
+\end{corollary}
+Corollary~\ref{cor:04} is a special case of Corollary~\ref{cor:04}. \\
+
+Before, we illustrate the impact on a publicly available data set, we give a small example highlighting cases which are not invariant to translations of the marker coding.
 We recommend to use the data of Example~\ref{ex:06} to validate the statements.
 
 \begin{example}~\\
@@ -641,7 +652,7 @@ We identified the cause of the coding-dependent performance of epistasis effects
 \vspace{0.5cm}
 \begin{proof}[Proposition 1]
 	The fact that the goodness of fit remains the same, results from the definition of the polynomials. To see that the coefficients of monomials of highest degree are identical, choose a monomial $m(M_{l_1},M_{l_2},...,M_{l_D})$ of the loci $l_1,...,l_D$ of degree $D$ of $f$. Multiplying the factors of $m(\tilde{M}_{l_1}+P_{l_1},\tilde{M}_{l_2}+P_{l_2},...,\tilde{M}_{l_D}+P_{l_D})$ gives the same monomial 
-	$m(\tilde{M}_{l_1},\tilde{M}_{l_2},...,\tilde{M}_{l_D})$ as a summand of highest degree, plus additional monomials of lower degree. Thus, the coefficients of monomials of degree $D$ remain the same. 
+	$m(\tilde{M}_{l_1},\tilde{M}_{l_2},...,\tilde{M}_{l_D})$ as a summand of highest degree, plus additional monomials of lower degree. Thus, the coefficients of monomials of degree $D$ remain the same.
 \end{proof}
 \section*{Author's contribution}
 JWRM: Proposed to consider the topic; derived the theoretical results; JWRM and FRM wrote the manuscript;
