@@ -343,17 +343,17 @@ This mixed model RRBLUP is also called \emph{genomic best linear unbiased predic
 
 It is known that translations of the marker coding, that is subtracting a constant $m_i$ from the $i$-th column of $\M$ does not change the predictions $\hat{\y}$ of an  OLS regression (provided it is well-defined). This invariance also holds for RRBLUP, when the penalty factor remains fixed. Also when modeling interactions by products of two predictor variables, that is when fitting the coefficients of a polynomial of degree two to the data, OLS predictions are not affected by translations of the marker coding. Contrarily, the predictions of its penalized regression analogue \emph{extended genomic best linear unbiased prediction} (EGBLUP) indeed are sensible to a translation of the coding \cite{he2016does,Martini17}.\\
 
-In this work we will address the question of why the penalized regression method is affected by translations of the marker coding when a polynomial function of higher degree is used. 
-We will start with a short recapitulation of the different methods.
+In this work we address the question of why the penalized regression method is affected by translations of the marker coding when a polynomial function of higher degree is used. 
+We  start with a short recapitulation of the different methods.
 
 
 
 \section*{Theory: Specification of regression methods}
 In the following we specify the relevant models and regressions to answer the research question previously stated. 
 If an expression includes an inverse of a matrix, we implicitly assume that the matrix is invertible for the respective statement, also if not mentioned explicitly. 
-Analogously, some statements for OLS may implicitly assume that a unique estimate exists, which for instance implicitly restricts to cases of $n>p$ for OLS. \vspace{0.4cm} \\
+Analogously, some statements for OLS may implicitly assume that a unique estimate exists, which, for instance, implicitly restricts to cases of $n>p$ for OLS. \vspace{0.4cm} \\
 {\bf Additive effect regression}\vspace{0.2cm}\\ 
-The additive effect model has already been presented in Eq.~(\ref{cor:01}) \vspace{0.1cm}\\
+The additive effect model has already been presented in Eq.~(\ref{cor:01}). \vspace{0.1cm}\\
 {\bf OLS} 
 The ordinary least squares approach is to determine $\bm{\beta}$ by minimizing the squared residuals: 
 \begin{equation}\label{eq:03}
@@ -380,7 +380,7 @@ $\M_{i,\bullet}$ denotes here the $i$-th row of $\M$, that is the genomic data o
 	\end{pmatrix}^{t}
 	\mathbf{y}
 \end{equation}
-provided that the required inverse exists, which in particular also means that $n$ has to be greater than $p$.\\
+provided that the required inverse exists, which, in particular, also means that $n$ has to be greater than $p$.\\
 
 In problems of statistical genetics, we often deal with a high number of loci and a relatively low number of observations.
 In this situation of $p + 1 > n$, the solution to Eq.~(\ref{eq:03}) is not unique but a vector subspace of which each point minimizes Eq.~(\ref{eq:03}) to zero.
@@ -393,7 +393,7 @@ Due to this overfit, the quality of predictions $\hat{\mathbf{y}}$ for genotypes
 		\hat{\bm{\beta}}
 	\end{pmatrix}_{\mbox{\small RR}_\lambda} :=\argmin_{(\mu,\bm{\beta}) \in \mathbb{R}^{p+1}} \sum\limits_{i=1}^n (y_i - \M\bm{\beta} - \mu)^2  + \lambda \sum\limits_{j=1}^p {\beta}_j^2
 \end{equation}
-for a penalty factor $\lambda > 0$. Using an approach of maximizing the density of the joint distribution of $(\mathbf{y},\bm{\beta})$, the model specifications of ${\beta_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\beta^2)$ and ${\epsilon_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\epsilon^2)$ allow to determine the penalty factor as ratio of the variance components  as $\lambda := \frac{\sigma_\epsilon^2}{\sigma_\beta^2}$. We stress that Eq.~(\ref{eq:05}) is not a pure ridge regression (RR), as the name RRBLUP might suggest, but a mixed model which treats $\mu$ and $\bb$ differently by not penalizing the size of $\mu$. This is the version which is most frequently used in the context of genomic prediction (often with additional fixed effects). \\
+for a penalty factor $\lambda > 0$. Using an approach of maximizing the density of the joint distribution of $(\mathbf{y},\bm{\beta})$, the model specifications of ${\beta_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\beta^2)$ and ${\epsilon_i}\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_\epsilon^2)$ allow to determine the penalty factor as ratio of the variance components  as $\lambda := \frac{\sigma_\epsilon^2}{\sigma_\beta^2}$. We stress that Eq.~(\ref{eq:05}) is not a pure ridge regression (RR), as the name RRBLUP might suggest, but a mixed model which treats $\mu$ and $\bb$ differently by not penalizing the size of $\mu$. This is the version, which is most frequently used in the context of genomic prediction (often with additional fixed effects). \\
 
 The corresponding solution is given by 
 \begin{equation}
@@ -425,17 +425,17 @@ An extension of the additive model of Eq.~(\ref{eq:01}) is a first order epistas
 \end{equation}\vspace{0.1cm}\\
 {\bf OLS} Since the model is still linear in the coefficients, Eq.~(\ref{eq:04}) represents the OLS solution, but with a modified matrix $\M$ including the products of markers as additional predictor variables. \vspace{0.4cm}\\
 {\bf eRRBLUP}
-The extended RRBLUP is based on the additional assumption of $h_{j,k }\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_h^2 )$. Also here the solution is given by an analogon of Eq.~(\ref{eq:06}), but with two different penalty factors $\lambda_1:=\frac{\sigma_\epsilon^2}{\sigma_\beta^2}$ and $\lambda_2:=\frac{\sigma_\epsilon^2}{\sigma_h^2}$.
+The extended RRBLUP is based on the additional assumption of $h_{j,k }\stackrel{i.i.d.}{\sim} \mathcal{N}(0,\sigma_h^2 )$. Also here, the solution is given by an analogon of Eq.~(\ref{eq:06}), but with two different penalty factors $\lambda_1:=\frac{\sigma_\epsilon^2}{\sigma_\beta^2}$ and $\lambda_2:=\frac{\sigma_\epsilon^2}{\sigma_h^2}$.
 \vspace{0.4cm}\\
 {\bf Translations of the marker coding}\vspace{0.2cm}\\
 In quantitative genetics, often allele frequencies are subtracted from the original $0$, $1$, $2$ coding of $\M$ to 
 use $\tilde{\M}:=\M-\mathbf{1}_n\P^t$ with $\P$ the vector of column means of $\M$ such that 
 $$\sum_{i=1}^n \tilde{M}_{i,j} = 0\quad \forall j =1,\dots,p.$$ 
-However, also other types of translations, for instance a symmetric $\{-1,0,1\}$ coding or a genotype-frequency centered coding \cite{alvarez2007unified} can be found in quantitative genetics literature. Thus, the question occurs whether this has an impact on the estimates of the marker effects or on the prediction of new genotypes. \\
+However, also other types of translations, for instance a symmetric $\{-1,0,1\}$ coding or a genotype-frequency centered coding \cite{alvarez2007unified} can be found in quantitative genetics literature. Thus, the question occurs whether this has an impact on the estimates of the marker effects or on the prediction of phenotypes on new genotypes. \\
 
 The answer is that for the additive setup of Eq.~(\ref{eq:01}), a shift from $\M$ to $\tilde{\M}$ will change $\hat{\mu}$ but not $\hat{\bm{\beta}}$ and any prediction $\hat{\mathbf{y}}$ will not be affected, neither for OLS, nor for RRBLUP (provided that $\lambda$ is not changed). This invariance we observe for the additive model does not hold for the extended RRBLUP method.
 
-We will give an example and discuss the effect of translations of the marker coding in a more general way afterwards. \\
+We give an example and discuss the effect of translations of the marker coding in a more general way afterwards. \\
 
 \begin{example}[Translations of the marker coding]\label{ex:06}
 	Let the marker data of five individuals with two markers be given:
@@ -451,36 +451,62 @@ We will give an example and discuss the effect of translations of the marker cod
 	We consider the first order epistasis model $$y_i := \mu + \beta_1 M_{i,1} + \beta_2 M_{i,2}  + h_{1,2} M_{i,1}M_{i,2} + \epsilon_i.$$
 	Then, we obtain  the corresponding estimates based on i) an OLS model, ii) a the mixed model RRBLUP1 of Eq.~(\ref{eq:06}) with $\lambda=1$, and iii) a  mixed model RRBLUP2 of Eq.~(\ref{eq:06}) with $\lambda=1$ when $\beta_1$ and $\beta_2$ are non-penalized. The results are reported in Table~\ref{table:example1}. The columns labeled ``centred" correspond to the usage of design matrix $\tilde\M$, and the columns labeled ``uncentered" correspond to the usage of design matrix $\M$.
 
+%\begin{table}[ht] \caption{Results from Example 1}\label{table:example1}
+%\centering
+%\begin{tabular}{|l|r|r|r||r|r|r|}
+%\hline
+%&\multicolumn{3}{c||}{Non-Centred ($\M$)}&\multicolumn{3}{c|}{Centred ($\tilde\M$)}\\ 
+%\hline
+%Est. Coeffs. &OLS&RRBLUP1&RRBLUP2&OLS&RRBLUP1&RRBLUP2\\
+%\hline
+%$\mu$&1.83&1.81&2.69&0.33&0.33&0.33\\
+%$\beta_1$&-0.97&-0.89&-1.54&-2.11&-1.15&-2.11\\
+%$\beta_2$&1.88&0.71&1.03&0.06&0.09&0.11\\
+%$h_{1,2}$&-1.14&-0.48&-0.57&-1.14&-0.56&-0.56\\
+%\hline\hline
+%Prediction &&&&&&\\
+%$y$& x& x& x& x& x&x\\
+%\hline 
+%\end{tabular}
+%\end{table}
+
 \begin{table}[ht] \caption{Results from Example 1}\label{table:example1}
 \centering
 \begin{tabular}{|l|r|r|r||r|r|r|}
 \hline
 &\multicolumn{3}{c||}{Non-Centred ($\M$)}&\multicolumn{3}{c|}{Centred ($\tilde\M$)}\\ 
 \hline
-Coeffs.&OLS&RRBLUP1&RRBLUP2&OLS&RRBLUP1&RRBLUP2\\
+Est. Coeffs. &OLS&RRBLUP1&RRBLUP2&OLS&RRBLUP1&RRBLUP2\\
 \hline
 $\mu$&1.83&1.81&2.69&0.33&0.33&0.33\\
 $\beta_1$&-0.97&-0.89&-1.54&-2.11&-1.15&-2.11\\
 $\beta_2$&1.88&0.71&1.03&0.06&0.09&0.11\\
-$h_{1,2}$&-1.14&-0.48&-0.57&-1.14&-0.56&-0.56\\
+$h_{1,2}$&-1.14&-0.48&-0.57&-1.14&-0.56&-0.57\\
+\hline\hline
+${\mathbf{y}}$ Pred. &&&&&&\\
+& -0.91& -0.47& -0.61& -0.91& -0.26&-0.61\\
+& 2.34& 1.38& 2.07& 2.34& 1.45&2.07\\
+& -0.11& 0.03& -0.39& -0.11& 0.00&-0.39\\
+& -0.51& -0.22& -0.50& -0.51& -0.13&-0.50\\
+& 0.86& 0.92& 1.15& 0.86& 0.59&1.15\\              
 \hline 
 \end{tabular}
 \end{table}
 
 We summarize our observations from the reported results as follows:
-\begin{itemize}
-\item Comparing the two OLS models, the estimated effects $\mu$, $\beta_1$ and $\beta_2$ change, but the estimated interaction $\hat{h}_{1,2}$ as well as $\hat{\mathbf{y}}$ remain unchanged.
-\item Comparing the two RRBLUP1 models, both methods give different estimates for all the parameters and the solutions produce different predictions $\hat{\mathbf{y}}$.
-\item Comparing the two RRBLUP2 models, both methods give different estimates for $\mu$, $\beta_1$ and $\beta_2$, but the same for $h_{1,2}$, as well as $\hat{\mathbf{y}}$.
+\begin{itemize}	
+\item Comparing the two OLS models, the estimated effects $\mu$, $\beta_1$ and $\beta_2$ change, but the estimated interaction $\hat{h}_{1,2}$ as well as the prediction of ${\mathbf{y}}$ remain unchanged.
+\item Comparing the two RRBLUP1 models, both methods give different estimates for all the parameters and the solutions produce different predictions for ${\mathbf{y}}$.
+\item Comparing the two RRBLUP2 models, both methods give different estimates for $\mu$, $\beta_1$ and $\beta_2$, but the same for $h_{1,2}$, as well as the prediction of ${\mathbf{y}}$.
 \end{itemize}
 \end{example}
 
-The different cases presented in Example~\ref{ex:06} have a certain systematic pattern, which we will discuss in the following section. 
+The different cases presented in Example~\ref{ex:06} have a certain systematic pattern, which we  discuss in the following section. 
 %In particular note that the predictions of $\y$ are for $\mbox{\small RR}_{\lambda_h = 1}$ independent of the coding.
 
 
 \section*{Results} 
-The observations made in Example~\ref{ex:06} are explained by the  following simple proposition
+The observations made in Example~\ref{ex:06} are explained by the  following simple proposition,
 which has several interesting implications.
 \begin{proposition}\label{prop:01} Let $\M_{i,\bullet}$ be the $p$ vector of the marker values of individual $i$ and let $f(\M_{i,\bullet}): \mathbb{R}^p \rightarrow \mathbb{R}$ be a polynomial of degree $D$ in the marker data. Moreover, let $\tilde{\M}:= \M - \mathbf{1} \P^t$ be a translation of the marker coding (as in Example~\ref{ex:06}) and let us define a polynomial $\tilde{f}$ in the translated variables $\tilde{\M}$ by $\tilde{f}(\tilde{\M}_{i,\bullet}):= f(\tilde{\M}_{i,\bullet} +  \P^t)=f(\M_{i,\bullet})$. Then for any data $\y$, the sum of squared distances will be identical 
 	$$ \sum_{i=1,...,n} (y_i - f(\M_{i,\bullet}))^2 = \sum_{i=1,...,n} (y_i - \tilde{f}(\tilde{\M}_{i,\bullet}))^2 $$
@@ -493,7 +519,7 @@ Since OLS is defined only by the minimal quadratic distance, this also means tha
 adapt any $f$ to the corresponding $\tilde{f}$ of Proposition~\ref{prop:01}.
 To allow this adaption, the possibility to adapt any coefficient of monomials of lower degree is required.
 We cannot adapt the regression completely if certain coefficients are forced to zero by the model structure. If a coefficient is equal to zero in $f$, it may be different from zero in $\tilde{f}$.
-We will illustrate this with an example. 
+We illustrate this with an example. 
 
 \begin{example}[Models without certain terms of intermediate degree]\label{ex:07}
 	Let us consider the data $\M$ and $\y$ of Example \ref{ex:06} but with the assumption that marker $2$ does not have an additive effect. Then
@@ -522,20 +548,20 @@ More precisely, for any monomial of degree $d$, the model has to include all mon
 The following corollary explains the results observed in our examples and some additional properties of penalized regression methods.  
 
 \begin{corollary}\label{cor:01}
-	For all statements it is assumed that penalty factors remain unchanged and that the model is complete in the sense that for any $f$, the corresponding $\tilde{f}$ is a valid fit.
+	For all statements, it is assumed that penalty factors remain unchanged and that the model is complete in the sense that for any $f$, the corresponding $\tilde{f}$ is a valid fit.
 	\begin{itemize}
-\item [a)] 	For a model of any degree $D$ , the OLS estimates of the coefficients of highest degree as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding.
-		\item [b)] For a regression which only penalizes the coefficients of highest degree $D$, the estimates of the coefficients degree $D$ as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding.
+\item [a)] 	For a model of any degree $D$, the OLS estimates of the coefficients of highest degree as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding.
+		\item [b)] For a regression, which only penalizes the coefficients of highest degree $D$, the estimates of the coefficients degree $D$ as well as the predictions $\hat{\y}$ are invariant with respect to translations of the marker coding.
 		\item[c)] 	In particular, predictions $\hat{\y}$ of RRBLUP are invariant with respect to translations of the marker coding, since we are dealing with a model of degree 1 and a regression that does not penalize the fixed effect (degree 0).
 		\item[d)] An additive least absolute shrinkage and selection operator (LASSO) regression $\ell_1$~penalizing the marker effects but not the intercept is invariant to translations of the marker coding. 
 
 	\end{itemize}
 \end{corollary}
-Corollary~\ref{cor:01} a) is a result of the OLS method being defined only by the sum of squares and explains why the OLS estimates $\hat{h}_{1,2}$ and $\tilde{h}_{1,2}$ of Example~\ref{ex:06} are identical. Part b) is a results of the following observation: For each $f$, its corresponding $\tilde{f}$ will have the same sum of squared distances and the same coefficients of highest degree (with the translated marker coding). Thus, it will have the same value for the target function of Eq.~(\ref{eq:05}) which we aim to minimize.
+Corollary~\ref{cor:01}a) is a result of the OLS method being defined only by the sum of squares and explains why the OLS estimates $\hat{h}_{1,2}$ and $\tilde{h}_{1,2}$ of Example~\ref{ex:06} are identical. Part b) is a results of the following observation: For each $f$, its corresponding $\tilde{f}$ will have the same sum of squared distances and the same coefficients of highest degree (with the translated marker coding). Thus, it will have the same value for the target function of Eq.~(\ref{eq:05}) which we aim to minimize.
 Since this is true for any polynomial $f$, it is in particular true for the solution minimizing the target function.
-Corollary~\ref{cor:01} b) applied to complete models of degree $1$ gives the result of RRBLUP being invariant to translations of the marker coding which has previously for instance been proven using the mixed model equations \cite{Martini17} (which is slightly more complicated and less general than the argumentation here). Part d) illustrates that these observations also transfer to other types of penalized regressions, for instance to LASSO. 
+Corollary~\ref{cor:01}b) applied to complete models of degree $1$ gives the result of RRBLUP being invariant to translations of the marker coding, which has previously for instance been proven using the mixed model equations \cite{Martini17} (which is slightly more complicated and less general than the argumentation here). Part d) illustrates that these observations also transfer to other types of penalized regressions, for instance to LASSO. 
 
-Before, we illustrate the impact on a publicly available data set, we give a small example highlighting cases which are not invariant to translations of the marker coding.
+Before, we illustrate the impact on a publicly available data set, we give a small example highlighting cases, which are not invariant to translations of the marker coding.
 We recommend to use the data of Example~\ref{ex:06} to validate the statements.
 
 \begin{example}~\\
@@ -543,7 +569,7 @@ We recommend to use the data of Example~\ref{ex:06} to validate the statements.
 		\item[b)] RRBLUP with the fixed effect forced to zero is not invariant to translations of the marker coding.
 				\item[c)] An extended LASSO $\ell_1$ penalizing additive effects and interactions is not invariant to translations of the coding.
 	\end{itemize}
-\end{example} We will now illustrate the practical relevance of our observations on a well investigated publicly available wheat data set. \vspace{0.4cm}\\
+\end{example} We now illustrate the practical relevance of our observations on a well investigated publicly available wheat data set. \vspace{0.4cm}\\
 {\bf Results on a wheat data set}\\
 
   
@@ -551,10 +577,10 @@ We recommend to use the data of Example~\ref{ex:06} to validate the statements.
 
 \paragraph{Calculating the interaction effects} 
 The assessment of the practical impact of translations of the marker coding on the effect estimates is difficult. 
-Since in practice, the variance components and thus the penalty factors are estimated on the data, the translations of the marker coding may have an additional indirect effect of changing the penalty factors. Moreover, there may be numerical issues changing the interaction effects when a large number of interactions is included.
-Thus, it seems difficult to separate these superposed effects. For this reason, we decided to restrict our model to the $100$ most important markers and their interactions. In more detail, for each environment we perform RRBLUP, chose the $100$ markers with highest absolute effect size and built a model with all pairwise interactions between them. Thus, the corresponding eRRBLUP includes the fixed effect $\mu$, $100$ additive effects and $4450$ interactions. We prefer this approach to an approach of randomly selecting $100$ markers, since approaches of restricting interactions to markers with large additive effects can be found in literature \cite{karkkainen2015efficient}. Moreover, we estimated the variance components only for the allele-frequency centered coding and used the penalty factors also for the estimates with other codings. This is analogous to the fact that the translational invariance of RRBLUP holds when the penalty factor remains fixed. For the estimation of the variance components, we used the \texttt{regress} package \cite{clifford2014regress}.\\
+Since, in practice, the variance components and thus, the penalty factors are estimated on the data, the translations of the marker coding may have an additional indirect effect of changing the penalty factors. Moreover, there may be numerical issues changing the interaction effects when a large number of interactions is included.
+Thus, it seems difficult to separate these superposed effects. For this reason, we decided to restrict our model to the $100$ most important markers and their interactions. In more detail, for each environment we perform RRBLUP, choose the $100$ markers with highest absolute effect size and build a model with all pairwise interactions between them. Thus, the corresponding eRRBLUP includes the fixed effect $\mu$, $100$ additive effects and $4450$ interactions. We prefer this approach to an approach of randomly selecting $100$ markers, since approaches of restricting interactions to markers with large additive effects can be found in literature \cite{karkkainen2015efficient}. Moreover, we estimated the variance components only for the allele-frequency centered coding and used the penalty factors also for the estimates with other codings. This is analogous to the fact that the translational invariance of RRBLUP holds when the penalty factor remains fixed. For the estimation of the variance components, we used the \texttt{regress} package \cite{clifford2014regress}.\\
 
-We compare three different codings: The originally provided ${0,1}$ coding, a version translated by $-0.5$, that is a symmetric $-0.5, 0.5$ coding, and a coding in which the mean of each column is subtracted. We will refer to these codings later as the \emph{original} coding, the \emph{symmetric} coding and \emph{allele-frequency centered} coding. \\
+We compare three different codings: The originally provided ${0,1}$ coding, a version translated by $-0.5$, that is a symmetric $-0.5, 0.5$ coding, and a coding in which the mean of each column is subtracted. We refer to these codings later as the \emph{original} coding, the \emph{symmetric} coding and \emph{allele-frequency centered} coding. \\
 
 For each of the environments, we compare the correlation of the estimated $4450$ interaction effects for the three different codings. The results are summarized in Table~\ref{tab:01}. 
 We see that the estimates are highly correlated, but not identical. In particular, the effects sizes seem to be more similar between the original $0,1$ coding and the $\pm 0.5$ coding than between each of these codings and the allele-frequency centered version.
@@ -589,10 +615,10 @@ The correlation of the estimates of each of these codings and the allele-frequen
 
 
 \section*{Discussion}
-The illustrated problem of the coding having an impact on the estimates of interactions in penalizes regressions is essential for quantitative genetics, where Hadamard products are often used to model interaction such as epistasis or gene by environment interaction. In particular this shows once more that the size of these interaction estimates should be interpreted with caution, since a biological meaningfulness is not obvious, and which again is also reflected by the doubtful biologically mechanistic meaning of variance components \cite{Huang16}.\\
+The illustrated problem of the coding having an impact on the estimates of interactions in penalizes regressions is essential for quantitative genetics, where Hadamard products are often used to model interaction such as epistasis or gene by environment interaction. In particular, this shows once more that the size of these interaction estimates should be interpreted with caution, since a biological meaningfulness is not obvious, and which again is also reflected by the doubtful biologically mechanistic meaning of variance components \cite{Huang16}.\\
 
 The fact that the original and the symmetric coding produced estimates which were more similar to each other than to the estimates derived from the centered coding also fits to previous observations where the predictive ability of different codings was compared. There, the allele-frequency centered coding was found to be different from the codings in which each marker was coded identically \cite{Martini17}. 
-There, it was also found that the symmetric coding seems to outperform other codings slightly (with respect to predictive ability). \\
+It was also found that the symmetric coding seems to outperform other codings slightly (with respect to predictive ability). \\
 
 It should be highlighted, that the problem does not seem to be a consequence of non-orthogonality of the predictor variables (marker values and their products), since these problems would not appear in an OLS regression (provided that it exists), where the variables have the same coding and thus the same angle. \\
 
