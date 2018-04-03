@@ -563,7 +563,7 @@ A central point of Corollary~\ref{cor:02} is that it is valid for any penalty on
 	\begin{corollary}\label{cor:03}	In particular, predictions $\hat{\y}$ of RRBLUP are invariant with respect to translations of the marker coding, since we are dealing with a model of degree 1 and a regression that does not penalize the fixed effect (degree 0). 
 	\end{corollary}
 Corollary~\ref{cor:02} applied to complete models of degree $1$ gives the result of Corollary~\ref{cor:03}, that is RRBLUP being invariant to translations of the marker coding.
-This has previously for instance been proven using the mixed model equations \cite{Martini17} (which is slightly more complicated and less general than the argumentation here).
+This has previously for instance been proven using a marginal likelihood setup \cite{stranden11}, or the mixed model equations \cite{Martini17}. 
 
 
 		\begin{corollary}\label{cor:04} An additive least absolute shrinkage and selection operator (LASSO) regression \cite{tibshirani96}, $\ell_1$~penalizing the marker effects but not the intercept is invariant to translations of the marker coding. 
@@ -623,9 +623,9 @@ The correlation of the estimates of each of these codings and the centered codin
 
 
 \section*{Discussion}
-The illustrated problem of the coding having an impact on the estimates of interactions in penalized regressions is essential for quantitative genetics, where Hadamard products are often used to model interaction such as epistasis or gene by environment interaction. The use of Hadamard products of covariance matrices to model interaction is an exact reformulation of the interaction effect model \cite{jiang15,Martini16}. In particular, this illustrates once more that the size of these interaction estimates should be interpreted with caution because a biological meaning is not necessarily given. This fact is also reflected by the fact that estimated variance components do not necessarily have a mechanistic meaning ``genetic architectural'' meaning \cite{Huang16}.\\
+The illustrated problem of the coding having an impact on the estimates of interactions in penalized regressions is essential for quantitative genetics, where Hadamard products are often used to model interaction such as epistasis or gene by environment interaction \cite{perez17}. The use of Hadamard products of covariance matrices to model interaction is an exact reformulation of the interaction effect model \cite{jiang15,Martini16}. In particular, this illustrates once more that the size of these interaction estimates should be interpreted with caution because a biological meaning is not necessarily given. This fact is also reflected by the fact that estimated variance components do not necessarily have a mechanistic meaning ``genetic architectural'' meaning \cite{Huang16}.\\
 
-The fact that the original and the symmetric coding produced estimates, which were more similar to each other than to the estimates derived from the centered coding also fits to previous observations, where the predictive ability of different codings was compared \cite{Martini17}. There, the allele-frequency centered coding was found to be different from the codings in which each marker was coded in the same way 
+The fact that the original and the symmetric coding produced estimates, which were more similar to each other than to the estimates derived from the centered coding also fits to previous observations, where the predictive ability of different codings was compared \cite{Martini17}. There, the column mean centered coding was found to be different from the codings in which each marker was coded in the same way. 
 It was also found that the symmetric coding seems to outperform other codings slightly (with respect to predictive ability and in a cross-validation scheme). \\
 
 It should be highlighted, that the problem does not seem to be a consequence of non-orthogonality of the predictor variables (marker values and their products), since these problems would not appear in an OLS regression (provided that it exists), where the variables have the same coding and thus the same angle. \\
