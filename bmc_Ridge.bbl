@@ -1,0 +1,847 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{26}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{meuwissen01}
+\begin{barticle}
+\bauthor{\bsnm{Meuwissen}, \binits{T.H.E.}},
+\bauthor{\bsnm{Hayes}, \binits{B.J.}},
+\bauthor{\bsnm{Goddard}, \binits{M.E.}}:
+\batitle{Prediction of total genetic value using genome-wide dense marker
+  maps}.
+\bjtitle{Genetics}
+\bvolume{157},
+\bfpage{1819}--\blpage{1829}
+(\byear{2001})
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem{schaeffer06}
+\begin{barticle}
+\bauthor{\bsnm{Schaeffer}, \binits{L.}}:
+\batitle{Strategy for applying genome-wide selection in dairy cattle}.
+\bjtitle{J Anim Breed Genet}
+\bvolume{123},
+\bfpage{218}--\blpage{223}
+(\byear{2006}).
+doi:\doiurl{10.1111/j.1439-0388.2006.00595.x}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{habier07}
+\begin{barticle}
+\bauthor{\bsnm{Habier}, \binits{D.}},
+\bauthor{\bsnm{Fernando}, \binits{R.L.}},
+\bauthor{\bsnm{Dekkers}, \binits{J.C.M.}}:
+\batitle{The impact of genetic relationship information on genome-assisted
+  breeding values}.
+\bjtitle{Genetics}
+\bvolume{177},
+\bfpage{2389}--\blpage{2397}
+(\byear{2007}).
+doi:\doiurl{10.1534/genetics.107.081190}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{hayes09a}
+\begin{barticle}
+\bauthor{\bsnm{Hayes}, \binits{B.J.}},
+\bauthor{\bsnm{Visscher}, \binits{P.M.}},
+\bauthor{\bsnm{Goddard}, \binits{M.E.}}:
+\batitle{Increased accuracy of artificial selection by using the realized
+  relationship matrix}.
+\bjtitle{Genet Res}
+\bvolume{91},
+\bfpage{47}--\blpage{60}
+(\byear{2009}).
+doi:\doiurl{10.1017/S0016672308009981}
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{hayes13}
+\begin{barticle}
+\bauthor{\bsnm{Hayes}, \binits{B.J.}},
+\bauthor{\bsnm{Cogan}, \binits{N.O.I.}},
+\bauthor{\bsnm{Pembleton}, \binits{L.W.}},
+\bauthor{\bsnm{Goddard}, \binits{M.E.}},
+\bauthor{\bsnm{Wang}, \binits{J.}},
+\bauthor{\bsnm{Spangenberg}, \binits{G.C.}},
+\bauthor{\bsnm{Forster}, \binits{J.W.}}:
+\batitle{{Prospects for genomic selection in forage plant species}}.
+\bjtitle{Plant Breeding}
+\bvolume{132},
+\bfpage{133}--\blpage{143}
+(\byear{2013}).
+doi:\doiurl{10.1111/pbr.12037}
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{falconer96}
+\begin{bbook}
+\bauthor{\bsnm{Falconer}, \binits{D.S.}},
+\bauthor{\bsnm{Mackay}, \binits{T.F.C.}}:
+\bbtitle{Introduction to Quantitative Genetics}.
+\bpublisher{Pearson Education, London}, \blocation{???}
+(\byear{1996})
+\end{bbook}
+\endbibitem
+
+%%% 7
+\bibitem{schaeffer2004application}
+\begin{barticle}
+\bauthor{\bsnm{Schaeffer}, \binits{L.}}:
+\batitle{Application of random regression models in animal breeding}.
+\bjtitle{Livestock Production Science}
+\bvolume{86}(\bissue{1}),
+\bfpage{35}--\blpage{45}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{henderson75}
+\begin{barticle}
+\bauthor{\bsnm{Henderson}, \binits{C.R.}}:
+\batitle{Best linear unbiased estimation and prediction under a selection
+  model}.
+\bjtitle{Biometrics}
+\bvolume{31},
+\bfpage{423}--\blpage{447}
+(\byear{1975}).
+doi:\doiurl{10.2307/2529430}
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{henderson76}
+\begin{barticle}
+\bauthor{\bsnm{Henderson}, \binits{C.R.}},
+\bauthor{\bsnm{Quaas}, \binits{R.L.}}:
+\batitle{Multiple trait evaluation using relatives' records}.
+\bjtitle{J Anim Sci}
+\bvolume{43},
+\bfpage{1188}--\blpage{1197}
+(\byear{1976}).
+doi:\doiurl{10.2527/jas1976.4361188x}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{henderson77}
+\begin{barticle}
+\bauthor{\bsnm{Henderson}, \binits{C.R.}}:
+\batitle{Best linear unbiased prediction of breeding values not in the model
+  for records}.
+\bjtitle{J Dairy Sci}
+\bvolume{60},
+\bfpage{783}--\blpage{787}
+(\byear{1977}).
+doi:\doiurl{10.3168/jds.S0022-0302(77)83935-0}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{he2016does}
+\begin{barticle}
+\bauthor{\bsnm{He}, \binits{D.}},
+\bauthor{\bsnm{Parida}, \binits{L.}}:
+\batitle{Does encoding matter? a novel view on the quantitative genetic trait
+  prediction problem}.
+\bjtitle{BMC bioinformatics}
+\bvolume{17}(\bissue{9}),
+\bfpage{272}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{Martini17}
+\begin{barticle}
+\bauthor{\bsnm{Martini}, \binits{J.W.R.}},
+\bauthor{\bsnm{Gao}, \binits{N.}},
+\bauthor{\bsnm{Cardoso}, \binits{D.F.}},
+\bauthor{\bsnm{Wimmer}, \binits{V.}},
+\bauthor{\bsnm{Erbe}, \binits{M.}},
+\bauthor{\bsnm{Cantet}, \binits{R.J.C.}},
+\bauthor{\bsnm{Simianer}, \binits{H.}}:
+\batitle{Genomic prediction with epistasis models: on the
+  marker-coding-dependent performance of the extended gblup and properties of
+  the categorical epistasis model ({CE})}.
+\bjtitle{BMC Bioinformatics}
+\bvolume{18},
+\bfpage{3}
+(\byear{2017}).
+doi:\doiurl{10.1186/s12859-016-1439-1}
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{ober15}
+\begin{barticle}
+\bauthor{\bsnm{Ober}, \binits{U.}},
+\bauthor{\bsnm{Huang}, \binits{W.}},
+\bauthor{\bsnm{Magwire}, \binits{M.}},
+\bauthor{\bsnm{Schlather}, \binits{M.}},
+\bauthor{\bsnm{Simianer}, \binits{H.}},
+\bauthor{\bsnm{Mackay}, \binits{T.F.C.}}:
+\batitle{Accounting for genetic architecture improves sequence based genomic
+  prediction for a {\it \uppercase{d}rosophila} fitness trait}.
+\bjtitle{PLOS ONE}
+\bvolume{10},
+\bfpage{0126880}
+(\byear{2015}).
+doi:\doiurl{10.1371/journal.pone.0126880}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{jiang15}
+\begin{barticle}
+\bauthor{\bsnm{Jiang}, \binits{Y.}},
+\bauthor{\bsnm{Reif}, \binits{J.C.}}:
+\batitle{Modeling epistasis in genomic selection}.
+\bjtitle{Genetics}
+\bvolume{201},
+\bfpage{759}--\blpage{768}
+(\byear{2015}).
+doi:\doiurl{10.1534/genetics.115.177907}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{Martini16}
+\begin{barticle}
+\bauthor{\bsnm{Martini}, \binits{J.W.R.}},
+\bauthor{\bsnm{Wimmer}, \binits{V.}},
+\bauthor{\bsnm{Erbe}, \binits{M.}},
+\bauthor{\bsnm{Simianer}, \binits{H.}}:
+\batitle{Epistasis and covariance: how gene interaction translates into genomic
+  relationship}.
+\bjtitle{Theor Appl Genet}
+\bvolume{129},
+\bfpage{963}--\blpage{976}
+(\byear{2016}).
+doi:\doiurl{10.1007/s00122-016-2675-5}
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{alvarez2007unified}
+\begin{barticle}
+\bauthor{\bsnm{{\'A}lvarez-Castro}, \binits{J.M.}},
+\bauthor{\bsnm{Carlborg}, \binits{{\"O}.}}:
+\batitle{A unified model for functional and statistical epistasis and its
+  application in quantitative trait loci analysis}.
+\bjtitle{Genetics}
+\bvolume{176}(\bissue{2}),
+\bfpage{1151}--\blpage{1167}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{stranden11}
+\begin{barticle}
+\bauthor{\bsnm{Strand{\'e}n}, \binits{I.}},
+\bauthor{\bsnm{Christensen}, \binits{O.F.}}:
+\batitle{Allele coding in genomic evaluation}.
+\bjtitle{Genetics Selection Evolution}
+\bvolume{43}(\bissue{1}),
+\bfpage{25}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{tibshirani96}
+\begin{botherref}
+\oauthor{\bsnm{Tibshirani}, \binits{R.}}:
+Regression shrinkage and selection via the lasso.
+Journal of the Royal Statistical Society. Series B (Methodological),
+267--288
+(1996)
+\end{botherref}
+\endbibitem
+
+%%% 19
+\bibitem{Crossa10}
+\begin{barticle}
+\bauthor{\bsnm{Crossa}, \binits{J.}},
+\bauthor{\bparticle{de~los} \bsnm{Campos}, \binits{G.}},
+\bauthor{\bsnm{P{\'e}rez}, \binits{P.}},
+\bauthor{\bsnm{Gianola}, \binits{D.}},
+\bauthor{\bsnm{Burgue{\~n}o}, \binits{J.}},
+\bauthor{\bsnm{Araus}, \binits{J.L.}},
+\bauthor{\bsnm{Makumbi}, \binits{D.}},
+\bauthor{\bsnm{Singh}, \binits{R.P.}},
+\bauthor{\bsnm{Dreisigacker}, \binits{S.}},
+\bauthor{\bsnm{Yan}, \binits{J.}},
+\bauthor{\bsnm{Arief}, \binits{V.}},
+\bauthor{\bsnm{Banziger}, \binits{M.}},
+\bauthor{\bsnm{Braun}, \binits{H.J.}}:
+\batitle{Prediction of genetic values of quantitative traits in plant breeding
+  using pedigree and molecular markers}.
+\bjtitle{Genetics}
+\bvolume{186},
+\bfpage{713}--\blpage{724}
+(\byear{2010}).
+doi:\doiurl{10.1534/genetics.110.118521}
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{RCoreTeam2016R:Computing}
+\begin{botherref}
+\oauthor{\bsnm{{R Core Team}}}:
+{R: A language and environment for statistical computing}.
+R Foundation for Statistical Computing,
+Vienna, Austria
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 21
+\bibitem{BGLR}
+\begin{botherref}
+\oauthor{\bparticle{de~los} \bsnm{Campos}, \binits{G.}},
+\oauthor{\bsnm{Rodriguez}, \binits{P.P.}}:
+BGLR: Bayesian Generalized Linear Regression.
+(2016).
+R package version 1.0.5.
+\url{https://CRAN.R-project.org/package=BGLR}
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem{karkkainen2015efficient}
+\begin{barticle}
+\bauthor{\bsnm{K{\"a}rkk{\"a}inen}, \binits{H.P.}},
+\bauthor{\bsnm{Li}, \binits{Z.}},
+\bauthor{\bsnm{Sillanp{\"a}{\"a}}, \binits{M.J.}}:
+\batitle{An efficient genome-wide multilocus epistasis search}.
+\bjtitle{Genetics}
+\bvolume{201}(\bissue{3}),
+\bfpage{865}--\blpage{870}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{clifford2014regress}
+\begin{botherref}
+\oauthor{\bsnm{Clifford}, \binits{D.}},
+\oauthor{\bsnm{McCullagh}, \binits{P.}},
+\oauthor{\bsnm{Clifford}, \binits{M.D.}}:
+The regress package.
+R package version,
+1--3
+(2014)
+\end{botherref}
+\endbibitem
+
+%%% 24
+\bibitem{perez17}
+\begin{botherref}
+\oauthor{\bsnm{P{\'e}rez-Rodr{\'\i}guez}, \binits{P.}},
+\oauthor{\bsnm{Crossa}, \binits{J.}},
+\oauthor{\bsnm{Rutkoski}, \binits{J.}},
+\oauthor{\bsnm{Poland}, \binits{J.}},
+\oauthor{\bsnm{Singh}, \binits{R.}},
+\oauthor{\bsnm{Legarra}, \binits{A.}},
+\oauthor{\bsnm{Autrique}, \binits{E.}},
+\oauthor{\bsnm{Campos}, \binits{G.d.l.}},
+\oauthor{\bsnm{Burgue{\~n}o}, \binits{J.}},
+\oauthor{\bsnm{Dreisigacker}, \binits{S.}}:
+Single-step genomic and pedigree genotype$\times$ environment interaction
+  models for predicting wheat lines in international environments.
+The plant genome
+\textbf{10}(2)
+(2017)
+\end{botherref}
+\endbibitem
+
+%%% 25
+\bibitem{Huang16}
+\begin{barticle}
+\bauthor{\bsnm{Huang}, \binits{W.}},
+\bauthor{\bsnm{Mackay}, \binits{T.F.C.}}:
+\batitle{The genetic architecture of quantitative traits cannot be inferred
+  from variance component analysis}.
+\bjtitle{PLOS Genet}
+\bvolume{12},
+\bfpage{1006421}
+(\byear{2016}).
+doi:\doiurl{10.1371/journal.pgen.1006421}
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{Morota14}
+\begin{barticle}
+\bauthor{\bsnm{Morota}, \binits{G.}},
+\bauthor{\bsnm{Gianola}, \binits{D.}}:
+\batitle{Kernel-based whole-genome prediction of complex traits: a review}.
+\bjtitle{Front Genet}
+\bvolume{5},
+\bfpage{363}
+(\byear{2014}).
+doi:\doiurl{10.3389/fgene.2014.00363}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Prediction of Total Genetic Value Using Genome-Wide Dense Marker
+  Maps</p></title>
+  <aug>
+    <au><snm>Meuwissen</snm><fnm>T H E</fnm></au>
+    <au><snm>Hayes</snm><fnm>B J</fnm></au>
+    <au><snm>Goddard</snm><fnm>M E</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <publisher>Genetics</publisher>
+  <pubdate>2001</pubdate>
+  <volume>157</volume>
+  <fpage>1819</fpage>
+  <lpage>-1829</lpage>
+  <url>http://www.genetics.org/content/157/4/1819</url>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Strategy for applying genome-wide selection in dairy
+  cattle</p></title>
+  <aug>
+    <au><snm>Schaeffer</snm><fnm>LR</fnm></au>
+  </aug>
+  <source>J Anim Breed Genet</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2006</pubdate>
+  <volume>123</volume>
+  <fpage>218</fpage>
+  <lpage>-223</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>The impact of genetic relationship information on genome-assisted
+  breeding values</p></title>
+  <aug>
+    <au><snm>Habier</snm><fnm>D</fnm></au>
+    <au><snm>Fernando</snm><fnm>R L</fnm></au>
+    <au><snm>Dekkers</snm><fnm>J C M</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <publisher>Genetics Soc America</publisher>
+  <pubdate>2007</pubdate>
+  <volume>177</volume>
+  <fpage>2389</fpage>
+  <lpage>-2397</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>Increased accuracy of artificial selection by using the realized
+  relationship matrix</p></title>
+  <aug>
+    <au><snm>Hayes</snm><fnm>BJ</fnm></au>
+    <au><snm>Visscher</snm><fnm>PM</fnm></au>
+    <au><snm>Goddard</snm><fnm>ME</fnm></au>
+  </aug>
+  <source>Genet Res</source>
+  <publisher>Cambridge University Press</publisher>
+  <pubdate>2009</pubdate>
+  <volume>91</volume>
+  <fpage>47</fpage>
+  <lpage>-60</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>{Prospects for genomic selection in forage plant
+  species}</p></title>
+  <aug>
+    <au><snm>Hayes</snm><fnm>BJ</fnm></au>
+    <au><snm>Cogan</snm><fnm>NOI</fnm></au>
+    <au><snm>Pembleton</snm><fnm>LW</fnm></au>
+    <au><snm>Goddard</snm><fnm>ME</fnm></au>
+    <au><snm>Wang</snm><fnm>J</fnm></au>
+    <au><snm>Spangenberg</snm><fnm>GC</fnm></au>
+    <au><snm>Forster</snm><fnm>JW</fnm></au>
+  </aug>
+  <source>Plant Breeding</source>
+  <pubdate>2013</pubdate>
+  <volume>132</volume>
+  <fpage>133</fpage>
+  <lpage>-143</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Introduction to Quantitative Genetics</p></title>
+  <aug>
+    <au><snm>Falconer</snm><fnm>D S</fnm></au>
+    <au><snm>Mackay</snm><fnm>T F C</fnm></au>
+  </aug>
+  <publisher>Pearson Education, London</publisher>
+  <pubdate>1996</pubdate>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Application of random regression models in animal
+  breeding</p></title>
+  <aug>
+    <au><snm>Schaeffer</snm><fnm>LR</fnm></au>
+  </aug>
+  <source>Livestock Production Science</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2004</pubdate>
+  <volume>86</volume>
+  <issue>1</issue>
+  <fpage>35</fpage>
+  <lpage>-45</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Best linear unbiased estimation and prediction under a selection
+  model</p></title>
+  <aug>
+    <au><snm>Henderson</snm><fnm>CR</fnm></au>
+  </aug>
+  <source>Biometrics</source>
+  <publisher>IBS</publisher>
+  <pubdate>1975</pubdate>
+  <volume>31</volume>
+  <fpage>423</fpage>
+  <lpage>-447</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Multiple trait evaluation using relatives' records</p></title>
+  <aug>
+    <au><snm>Henderson</snm><fnm>C R</fnm></au>
+    <au><snm>Quaas</snm><fnm>R L</fnm></au>
+  </aug>
+  <source>J Anim Sci</source>
+  <publisher>The American Society of Animal Science</publisher>
+  <pubdate>1976</pubdate>
+  <volume>43</volume>
+  <fpage>1188</fpage>
+  <lpage>-1197</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Best linear unbiased prediction of breeding values not in the model
+  for records</p></title>
+  <aug>
+    <au><snm>Henderson</snm><fnm>C R</fnm></au>
+  </aug>
+  <source>J Dairy Sci</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>1977</pubdate>
+  <volume>60</volume>
+  <fpage>783</fpage>
+  <lpage>-787</lpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Does encoding matter? a novel view on the quantitative genetic
+  trait prediction problem</p></title>
+  <aug>
+    <au><snm>He</snm><fnm>D</fnm></au>
+    <au><snm>Parida</snm><fnm>L</fnm></au>
+  </aug>
+  <source>BMC bioinformatics</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2016</pubdate>
+  <volume>17</volume>
+  <issue>9</issue>
+  <fpage>272</fpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Genomic prediction with epistasis models: on the
+  marker-coding-dependent performance of the extended GBLUP and properties of
+  the categorical epistasis model ({CE})</p></title>
+  <aug>
+    <au><snm>Martini</snm><fnm>J W R</fnm></au>
+    <au><snm>Gao</snm><fnm>N</fnm></au>
+    <au><snm>Cardoso</snm><fnm>D F</fnm></au>
+    <au><snm>Wimmer</snm><fnm>V</fnm></au>
+    <au><snm>Erbe</snm><fnm>M</fnm></au>
+    <au><snm>Cantet</snm><fnm>R J C</fnm></au>
+    <au><snm>Simianer</snm><fnm>H</fnm></au>
+  </aug>
+  <source>BMC Bioinformatics</source>
+  <pubdate>2017</pubdate>
+  <volume>18</volume>
+  <fpage>3</fpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Accounting for genetic architecture improves sequence based genomic
+  prediction for a {\it \uppercase{D}rosophila} fitness trait</p></title>
+  <aug>
+    <au><snm>Ober</snm><fnm>U</fnm></au>
+    <au><snm>Huang</snm><fnm>W</fnm></au>
+    <au><snm>Magwire</snm><fnm>M</fnm></au>
+    <au><snm>Schlather</snm><fnm>M</fnm></au>
+    <au><snm>Simianer</snm><fnm>H</fnm></au>
+    <au><snm>Mackay</snm><fnm>TFC</fnm></au>
+  </aug>
+  <source>PLOS ONE</source>
+  <publisher>Public Library of Science</publisher>
+  <pubdate>2015</pubdate>
+  <volume>10</volume>
+  <fpage>e0126880</fpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Modeling epistasis in genomic selection</p></title>
+  <aug>
+    <au><snm>Jiang</snm><fnm>Y</fnm></au>
+    <au><snm>Reif</snm><fnm>JC</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <publisher>Genetics Soc America</publisher>
+  <pubdate>2015</pubdate>
+  <volume>201</volume>
+  <fpage>759</fpage>
+  <lpage>-768</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Epistasis and covariance: how gene interaction translates into
+  genomic relationship</p></title>
+  <aug>
+    <au><snm>Martini</snm><fnm>J W R</fnm></au>
+    <au><snm>Wimmer</snm><fnm>V</fnm></au>
+    <au><snm>Erbe</snm><fnm>M</fnm></au>
+    <au><snm>Simianer</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Theor Appl Genet</source>
+  <pubdate>2016</pubdate>
+  <volume>129</volume>
+  <fpage>963</fpage>
+  <lpage>-976</lpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>A unified model for functional and statistical epistasis and its
+  application in quantitative trait loci analysis</p></title>
+  <aug>
+    <au><snm>{\'A}lvarez Castro</snm><fnm>JM</fnm></au>
+    <au><snm>Carlborg</snm><fnm>{\"O}</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <publisher>Genetics Soc America</publisher>
+  <pubdate>2007</pubdate>
+  <volume>176</volume>
+  <issue>2</issue>
+  <fpage>1151</fpage>
+  <lpage>-1167</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Allele coding in genomic evaluation</p></title>
+  <aug>
+    <au><snm>Strand{\'e}n</snm><fnm>I</fnm></au>
+    <au><snm>Christensen</snm><fnm>OF</fnm></au>
+  </aug>
+  <source>Genetics Selection Evolution</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2011</pubdate>
+  <volume>43</volume>
+  <issue>1</issue>
+  <fpage>25</fpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Regression shrinkage and selection via the lasso</p></title>
+  <aug>
+    <au><snm>Tibshirani</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Journal of the Royal Statistical Society. Series B
+  (Methodological)</source>
+  <publisher>JSTOR</publisher>
+  <pubdate>1996</pubdate>
+  <fpage>267</fpage>
+  <lpage>-288</lpage>
+</bibl>
+
+<bibl id="B19">
+  <title><p>Prediction of Genetic Values of Quantitative Traits in Plant
+  Breeding Using Pedigree and Molecular Markers</p></title>
+  <aug>
+    <au><snm>Crossa</snm><fnm>J</fnm></au>
+    <au><snm>Campos</snm><fnm>G</fnm></au>
+    <au><snm>P{\'e}rez</snm><fnm>P</fnm></au>
+    <au><snm>Gianola</snm><fnm>D</fnm></au>
+    <au><snm>Burgue{\~n}o</snm><fnm>J</fnm></au>
+    <au><snm>Araus</snm><fnm>J L</fnm></au>
+    <au><snm>Makumbi</snm><fnm>D</fnm></au>
+    <au><snm>Singh</snm><fnm>R P</fnm></au>
+    <au><snm>Dreisigacker</snm><fnm>S</fnm></au>
+    <au><snm>Yan</snm><fnm>J</fnm></au>
+    <au><snm>Arief</snm><fnm>V</fnm></au>
+    <au><snm>Banziger</snm><fnm>M</fnm></au>
+    <au><snm>Braun</snm><fnm>H J</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <pubdate>2010</pubdate>
+  <volume>186</volume>
+  <fpage>713</fpage>
+  <lpage>-724</lpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>{R: A language and environment for statistical
+  computing}</p></title>
+  <aug>
+    <au><cnm>{R Core Team}</cnm></au>
+  </aug>
+  <publisher>Vienna, Austria: R Foundation for Statistical
+  Computing</publisher>
+  <pubdate>2016</pubdate>
+</bibl>
+
+<bibl id="B21">
+  <title><p>BGLR: Bayesian Generalized Linear Regression</p></title>
+  <aug>
+    <au><snm>Campos</snm><fnm>G</fnm></au>
+    <au><snm>Rodriguez</snm><fnm>PP</fnm></au>
+  </aug>
+  <pubdate>2016</pubdate>
+  <url>https://CRAN.R-project.org/package=BGLR</url>
+  <note>R package version 1.0.5</note>
+</bibl>
+
+<bibl id="B22">
+  <title><p>An efficient genome-wide multilocus epistasis search</p></title>
+  <aug>
+    <au><snm>K{\"a}rkk{\"a}inen</snm><fnm>HP</fnm></au>
+    <au><snm>Li</snm><fnm>Z</fnm></au>
+    <au><snm>Sillanp{\"a}{\"a}</snm><fnm>MJ</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <publisher>Genetics Soc America</publisher>
+  <pubdate>2015</pubdate>
+  <volume>201</volume>
+  <issue>3</issue>
+  <fpage>865</fpage>
+  <lpage>-870</lpage>
+</bibl>
+
+<bibl id="B23">
+  <title><p>The regress package</p></title>
+  <aug>
+    <au><snm>Clifford</snm><fnm>D</fnm></au>
+    <au><snm>McCullagh</snm><fnm>P</fnm></au>
+    <au><snm>Clifford</snm><fnm>MD</fnm></au>
+  </aug>
+  <source>R package version</source>
+  <pubdate>2014</pubdate>
+  <fpage>1</fpage>
+  <lpage>-3</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>Single-step genomic and pedigree genotype$\times$ environment
+  interaction models for predicting wheat lines in international
+  environments</p></title>
+  <aug>
+    <au><snm>P{\'e}rez Rodr{\'\i}guez</snm><fnm>P</fnm></au>
+    <au><snm>Crossa</snm><fnm>J</fnm></au>
+    <au><snm>Rutkoski</snm><fnm>J</fnm></au>
+    <au><snm>Poland</snm><fnm>J</fnm></au>
+    <au><snm>Singh</snm><fnm>R</fnm></au>
+    <au><snm>Legarra</snm><fnm>A</fnm></au>
+    <au><snm>Autrique</snm><fnm>E</fnm></au>
+    <au><snm>Campos</snm><fnm>Gdl</fnm></au>
+    <au><snm>Burgue{\~n}o</snm><fnm>J</fnm></au>
+    <au><snm>Dreisigacker</snm><fnm>S</fnm></au>
+  </aug>
+  <source>The plant genome</source>
+  <publisher>Crop Science Society of America</publisher>
+  <pubdate>2017</pubdate>
+  <volume>10</volume>
+  <issue>2</issue>
+</bibl>
+
+<bibl id="B25">
+  <title><p>The Genetic Architecture of Quantitative Traits Cannot Be Inferred
+  from Variance Component Analysis</p></title>
+  <aug>
+    <au><snm>Huang</snm><fnm>W</fnm></au>
+    <au><snm>Mackay</snm><fnm>T F C</fnm></au>
+  </aug>
+  <source>PLOS Genet</source>
+  <publisher>Public Library of Science</publisher>
+  <pubdate>2016</pubdate>
+  <volume>12</volume>
+  <fpage>e1006421</fpage>
+</bibl>
+
+<bibl id="B26">
+  <title><p>Kernel-based whole-genome prediction of complex traits: a
+  review</p></title>
+  <aug>
+    <au><snm>Morota</snm><fnm>G</fnm></au>
+    <au><snm>Gianola</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Front Genet</source>
+  <pubdate>2014</pubdate>
+  <volume>5</volume>
+  <fpage>363</fpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment

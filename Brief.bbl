@@ -1,0 +1,52 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{ober15}
+U.~Ober, W.~Huang, M.~Magwire, M.~Schlather, H.~Simianer, T.~F.~C. Mackay,
+  Accounting for genetic architecture improves sequence based genomic
+  prediction for a {\it \uppercase{d}rosophila} fitness trait, PLOS ONE 10
+  (2015) e0126880.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0126880}
+  {\path{doi:10.1371/journal.pone.0126880}}.
+
+\bibitem{jiang15}
+Y.~Jiang, J.~C. Reif, Modeling epistasis in genomic selection, Genetics 201
+  (2015) 759--768.
+\newblock \href {http://dx.doi.org/10.1534/genetics.115.177907}
+  {\path{doi:10.1534/genetics.115.177907}}.
+
+\bibitem{martini16}
+J.~W.~R. Martini, V.~Wimmer, M.~Erbe, H.~Simianer, Epistasis and covariance:
+  how gene interaction translates into genomic relationship, Theor Appl Genet
+  129 (2016) 963--976.
+\newblock \href {http://dx.doi.org/10.1007/s00122-016-2675-5}
+  {\path{doi:10.1007/s00122-016-2675-5}}.
+
+\bibitem{perez17}
+P.~P{\'e}rez-Rodr{\'\i}guez, J.~Crossa, J.~Rutkoski, J.~Poland, R.~Singh,
+  A.~Legarra, E.~Autrique, G.~d.~l. Campos, J.~Burgue{\~n}o, S.~Dreisigacker,
+  Single-step genomic and pedigree genotype$\times$ environment interaction
+  models for predicting wheat lines in international environments, The plant
+  genome 10~(2).
+
+\bibitem{stranden11}
+I.~Strand{\'e}n, O.~F. Christensen, Allele coding in genomic evaluation,
+  Genetics Selection Evolution 43~(1) (2011) 25.
+
+\bibitem{martini17}
+J.~W.~R. Martini, N.~Gao, D.~F. Cardoso, V.~Wimmer, M.~Erbe, R.~J.~C. Cantet,
+  H.~Simianer, Genomic prediction with epistasis models: on the
+  marker-coding-dependent performance of the extended gblup and properties of
+  the categorical epistasis model ({CE}), BMC Bioinformatics 18 (2017) 3.
+\newblock \href {http://dx.doi.org/10.1186/s12859-016-1439-1}
+  {\path{doi:10.1186/s12859-016-1439-1}}.
+
+\bibitem{he2016does}
+D.~He, L.~Parida, Does encoding matter? a novel view on the quantitative
+  genetic trait prediction problem, BMC bioinformatics 17~(9) (2016) 272.
+
+\end{thebibliography}

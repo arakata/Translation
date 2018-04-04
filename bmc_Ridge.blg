@@ -1,0 +1,85 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: bmc_Ridge.aux
+The style file: bmc-mathphys.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bmc_article.bib
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 2585 of file bmc-mathphys.bst
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 2585 of file bmc-mathphys.bst
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 2585 of file bmc-mathphys.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 2686 of file bmc-mathphys.bst
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 2686 of file bmc-mathphys.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 3019 of file bmc-mathphys.bst
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 3019 of file bmc-mathphys.bst
+Name 2 in "Gustavo de los Campos and Paulino Perez Rodriguez," has a comma at the end for entry BGLR
+while executing---line 3019 of file bmc-mathphys.bst
+You've used 26 entries,
+            7128 wiz_defined-function locations,
+            1306 strings with 14185 characters,
+and the built_in function-call counts, 189004 in all, are:
+= -- 27019
+> -- 922
+< -- 556
++ -- 10634
+- -- 260
+* -- 11333
+:= -- 36331
+add.period$ -- 42
+call.type$ -- 26
+change.case$ -- 241
+chr.to.int$ -- 1178
+cite$ -- 26
+duplicate$ -- 2544
+empty$ -- 8105
+format.name$ -- 889
+if$ -- 44265
+int.to.chr$ -- 1
+int.to.str$ -- 72
+missing$ -- 901
+newline$ -- 811
+num.names$ -- 130
+pop$ -- 1062
+preamble$ -- 1
+purify$ -- 123
+quote$ -- 52
+skip$ -- 14221
+stack$ -- 0
+substring$ -- 22859
+swap$ -- 868
+text.length$ -- 422
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1085
+warning$ -- 0
+while$ -- 936
+width$ -- 0
+write$ -- 1089
+(There were 8 error messages)
